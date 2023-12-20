@@ -331,5 +331,25 @@
 - VPC Endpoint: Connects VPC to AWS services.
 - VPC Peering: Connects two VPCs.
 
+# IAM Best Practices
+- Use IAM users or roles instead of root account.
+- Grant least privilege.
+- Use IAM groups to assign permissions.
+- Use IAM policies to assign permissions.
+- Rotate credentials regularly.
+- Use MFA for privileged users.
+- Monitor activity in your AWS account.
+- Use roles for applications running on EC2 instances.
+- Use roles for applications running on AWS services.
+- Use roles for cross-account access.
+- Use roles for identity federation.
+- Use IAM conditions for extra security.
 
+# AWS Organizations Best Practices
+- Use separate accounts for production and development.
+- Use separate accounts for different business units.
+- Use separate accounts for different security levels.
+- Use separate accounts for different compliance requirements.
+- Use AWS Control Tower to manage multiple accounts.
+- Use AWS Organizations to manage multiple accounts.
 
