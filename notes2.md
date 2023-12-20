@@ -259,6 +259,7 @@
 - Amazon Elastic Kubernetes Service (EKS): Managed Kubernetes service.
 - AWS Fargate: Serverless compute engine for containers.
 - Essential concept in microservice architectures.
+- AMI: Amazon Machine Image. Template for virtual servers.
 
 # Locations Overview
 - AWS Regions: Geographical areas with multiple Availability Zones.
@@ -319,4 +320,16 @@
 - AWS Snowcone: Rugged, portable device for edge computing and data transfer.
 - AWS Snowball: Petabyte-scale data transport solution.
 - AWS Snowmobile: Exabyte-scale data transfer service.
+
+# VPC Overview
+- Virtual Private Cloud (VPC): Virtual network in AWS.
+- Subnet: Range of IP addresses in a VPC.
+- Route Table: Routes traffic between subnets.
+- Internet Gateway: Connects VPC to the Internet.
+- NAT Gateway: Connects VPC to the Internet for private subnets.
+- Virtual Private Gateway: Connects VPC to on-premises network.
+- VPC Endpoint: Connects VPC to AWS services.
+- VPC Peering: Connects two VPCs.
+
+
 
