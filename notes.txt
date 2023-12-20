@@ -1,0 +1,157 @@
+Amazon RDS (Relational Database Service):
+- Managed service for setting up, operating, and scaling a relational database in the cloud.
+- Automates tasks like backups, patching, scaling, and replication.
+- Supports popular database engines like MySQL, PostgreSQL, Oracle, SQL Server, MariaDB, and Amazon Aurora.
+
+Amazon DynamoDB:
+- A fast and flexible NoSQL database service for any scale.
+- Provides consistent, single-digit millisecond latency, ideal for mobile, web, gaming, ad tech, IoT, and other applications.
+    DynamoDB Accelerator (DAX):
+    - A fully managed, highly available, in-memory cache for DynamoDB.
+    - Improves performance of DynamoDB applications by up to 10x, even at millions of requests per second.
+
+Amazon DocumentDB:
+- A document database service that supports MongoDB workloads.
+- Offers scalability, durability, and security for managing MongoDB data.
+
+Amazon Keyspaces (for Apache Cassandra):
+- A scalable, highly available, and managed Apache Cassandra-compatible database service.
+- Suitable for applications that require Cassandra's flexible schema and high availability.
+
+Amazon Quantum Ledger Database (QLDB):
+- A fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log.
+- Provides a central, trusted authority for all applications that need to maintain an accurate and complete record of transactions.
+
+AWS Outposts:
+- Extends AWS infrastructure, services, APIs, and tools to virtually any data center, co-location space, or on-premises facility.
+- Provides a consistent hybrid experience for workloads that require low latency access or local data processing.
+
+AWS Dedicated Host:
+- A physical server with EC2 instance capacity fully dedicated for your use.
+- Helps in meeting compliance requirements and is useful for running licensed software tied to physical servers.
+
+AWS Simple Queue Service (SQS):
+- A fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications.
+- Offers two types of message queues: standard queues and FIFO queues.
+
+1. Amazon GuardDuty
+    Functionality: A threat detection service that continuously monitors for malicious or unauthorized behavior to help protect your AWS accounts and workloads.
+    Use Cases: Detects unusual API calls or potentially unauthorized deployments that indicate a possible account compromise.
+
+2. AWS Shield
+    Functionality: Provides protection against Distributed Denial of Service (DDoS) attacks.
+    Levels:
+    - Standard: Automatically included with AWS services at no extra cost. Offers protection from common, most frequently occurring network and transport layer DDoS attacks.
+    - Advanced: Provides enhanced protections and attack mitigation, along with 24/7 access to the AWS DDoS Response Team (DRT) and financial protection against DDoS-related spikes in your AWS bill.
+
+3. AWS WAF (Web Application Firewall)
+    Functionality: Helps protect your web applications or APIs against common web exploits and bots that may affect availability, compromise security, or consume excessive resources.
+    Use Cases: Customizable web security rules to block common attack patterns, like SQL injection or cross-site scripting.
+
+4. AWS Firewall Manager
+    Functionality: Central management for AWS WAF, AWS Shield, and Amazon VPC security groups.
+    Use Cases: Simplifies your AWS WAF administration and maintenance tasks across multiple accounts and resources.
+
+5. Amazon Inspector
+    Functionality: Automated security assessment service to improve the security and compliance of applications deployed on AWS.
+    Use Cases: Assesses applications for vulnerabilities or deviations from best practices, including exposed ports and known software vulnerabilities.
+
+6. Amazon Macie
+    Functionality: Uses machine learning to automatically discover, classify, and protect sensitive data in AWS.
+    Use Cases: Identifies and provides alerts on potentially unauthorized access or data leaks of sensitive data stored in Amazon S3.
+
+7. AWS Key Management Service (KMS)
+    Functionality: Managed service that makes it easy to create and control cryptographic keys used to encrypt data.
+    Use Cases: Secure your data with encryption keys managed in KMS, integrate with other AWS services for encryption purposes.
+
+8. AWS Identity and Access Management (IAM)
+    Functionality: Manages access to AWS services and resources securely.
+    Use Cases: Control who is authenticated and authorized to use resources, manage permissions, and create roles.
+    IAM Policies: JSON documents that define permissions for users, groups, and roles.
+
+Expert Assistance During Attacks:
+- AWS Support: The AWS Support Plan, especially the Enterprise tier, provides access to Cloud Support Engineers.
+- AWS Professional Services: Offers broader security support, including incident response and help from AWS security experts.
+- AWS Marketplace: Features third-party security solutions that can be integrated with AWS services for enhanced protection.
+
+1. AWS CloudFormation
+    Functionality: Enables you to create and manage AWS infrastructure using code. With CloudFormation, you define your AWS resources and their dependencies in a template file (YAML or JSON format).
+    Use Cases: Automating the setup of AWS environments, ensuring consistent and repeatable deployments.
+
+7. AWS OpsWorks
+    Functionality: A configuration management service that uses Chef and Puppet to automate how servers are configured, deployed, and managed across your Amazon EC2 instances or on-premises compute environments.
+    Use Cases: Managing server configurations with Chef and Puppet in AWS environments.
+
+Compliance
+- AWS Artifact: Provides on-demand access to AWS' security and compliance reports and select online agreements.
+- AWS Config: Provides a detailed view of the configuration of AWS resources in your AWS account.
+- AWS CloudTrail: Provides a history of AWS API calls for your account, including API calls made through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.
+- AWS Security Hub: Provides a comprehensive view of your security alerts and security posture across your AWS accounts.
+
+S3 Standard
+- General-purpose storage for frequently accessed data.
+- Designed for 99.99% availability and 99.999999999% durability.
+S3 Standard-Infrequent Access (S3 Standard-IA)
+- For data that is accessed less frequently, but requires rapid access when needed.
+S3 Intelligent-Tiering
+- Designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead.
+S3 One Zone-Infrequent Access (S3 One Zone-IA)
+- For data that is accessed less frequently, but requires rapid access when needed.
+- Stores data in a single AZ and costs 20% less than S3 Standard-IA.
+S3 Glacier
+- For data archiving or long-term backup.
+- Retrieval times configurable from minutes to hours.
+S3 Glacier Deep Archive
+- For long-term data archiving with retrieval times configurable from 12 to 48 hours.
+- Costs 75% less than S3 Glacier.
+
+AWS Cloud Adoption Framework (AWS CAF)
+- A collection of best practices, guidance, and resources for planning and executing a cloud transformation.
+Perspectives:
+- Business: Aligns business and IT strategies to drive an enterprise-wide cloud adoption strategy.
+- People: Helps you understand the skills and roles needed to support cloud adoption.
+- Governance: Helps you define a cloud governance framework to enable and control cloud adoption.
+- Platform: Helps you understand the technical capabilities needed to support cloud adoption.
+- Security: Helps you understand the security capabilities needed to support cloud adoption.
+- Operations: Helps you understand the operational capabilities needed to support cloud adoption.
+
+Migration Strategies (7 R's):
+- Rehost: Also known as "lift and shift", this strategy involves moving your applications to AWS without making any changes to their code.
+- Replatform: Involves making a few cloud optimizations to your applications to achieve a tangible benefit.
+- Repurchase: Involves moving from a traditional, on-premises license to a cloud-based software-as-a-service (SaaS) model.
+- Refactor / Re-architect: Involves making significant changes to your application's code base to take advantage of cloud-native features.
+- Retire: Involves retiring applications that are no longer needed.
+- Retain: Involves keeping applications on-premises or in a co-location data center.
+- Remediate: Involves making changes to your application's code base to mitigate risks.
+
+AWS Well-Architected Framework Five Pillars
+- Operational Excellence: The ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
+- Security: The ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.
+- Reliability: The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
+- Performance Efficiency: The ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
+- Cost Optimization: The ability to run systems to deliver business value at the lowest price point.
+
+Chatbots:
+- Amazon Lex: A service for building conversational interfaces into any application using voice and text.
+- Amazon Connect: A cloud-based contact center service that makes it easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
+
+Machine Learning:
+- Amazon SageMaker: A fully managed service that provides every developer and data scientist with the ability to build, train, and deploy machine learning (ML) models quickly.
+- Amazon Comprehend: A natural language processing (NLP) service that uses machine learning to find insights and relationships in text.
+- Amazon Rekognition: A service that makes it easy to add image and video analysis to your applications.
+- Amazon Forecast: A fully managed service that uses machine learning to deliver highly accurate forecasts.
+- Amazon Personalize: A machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+- Amazon Textract: A service that automatically extracts text and data from scanned documents.
+- Amazon Fraud Detector: A fully managed service that makes it easy to identify potentially fraudulent online activities, such as online payment fraud and the creation of fake accounts.
+
+AWS Direct Connect:
+- Establishes a dedicated network connection from your premises to AWS.
+- Useful for workloads that require a consistent network experience, such as latency-sensitive applications or applications that transfer large amounts of data.
+
+AWS Snow Family:
+- A collection of physical devices that help you transfer large amounts of data into and out of AWS.
+- Useful for workloads that require large data transfers, such as migrating data to the cloud or disaster recovery.
+
+AWS CloudFront:
+- A content delivery network (CDN) that delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.
+- Useful for workloads that require low latency and high transfer speeds, such as websites or applications that serve static or dynamic content.
