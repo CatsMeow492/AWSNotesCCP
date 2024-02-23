@@ -1,0 +1,53 @@
+1. AWS Fundamentals:
+   - AWS Regions and Availability Zones
+   - AWS Global Infrastructure
+   - AWS Identity and Access Management (IAM)
+
+2. Compute Services:
+   - Amazon EC2 (Elastic Compute Cloud)
+   - AWS Lambda
+   - Elastic Beanstalk
+
+3. Storage Services:
+   - Amazon S3 (Simple Storage Service)
+   - Amazon EBS (Elastic Block Store)
+   - Amazon RDS (Relational Database Service)
+
+4. AWS Application Integration:
+   - Amazon SNS (Simple Notification Service)
+   - Amazon SQS (Simple Queue Service)
+   - AWS Step Functions
+
+5. AWS Developer Tools:
+   - AWS CodeCommit
+   - AWS CodeBuild
+   - AWS CodeDeploy
+   - AWS CodePipeline
+
+6. Security and Compliance:
+   - IAM Policies and Roles
+   - Encryption (S3, RDS, etc.)
+   - AWS WAF (Web Application Firewall)
+
+7. Serverless:
+   - AWS SAM (Serverless Application Model)
+   - API Gateway
+   - AWS Lambda Functions
+   - DynamoDB (NoSQL Database)
+
+8. Deployment and Monitoring:
+   - AWS CloudFormation
+   - AWS CloudWatch
+   - AWS X-Ray
+   - AWS Elastic Beanstalk Deployment
+
+9. AWS SDKs and CLI:
+   - AWS SDKs for various programming languages
+   - AWS CLI (Command Line Interface)
+   - Boto3 (Python SDK)
+
+10. Exam Tips:
+    - Review the Well-Architected Framework
+    - Practice with sample questions
+    - Read AWS whitepapers and documentation
+
