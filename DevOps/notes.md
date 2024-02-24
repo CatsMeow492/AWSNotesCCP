@@ -39,6 +39,9 @@ To provision new AWS accounts in organization, we can be useful for DevOps teams
 ### Log Archive and Audit Manager
 Automatically configures a log archive and sets up AWS Audit Manager for compliance check which can be crucial for devops teams.
 
+### CfCT
+Automates the deployment of resources, including CloudFormation templates and SCPs, based on the organization's requirements. By leveraging an AWS CodeCommit repository to manage and version control these customizations, CfCT can automatically apply the necessary configurations and policies to new accounts provisioned through Account Factory, aligning closely with the requirement for a highly automated solution.
+
 ## S3
 ### Notes
 1. Objects must be deleted before the bucket can be deleted, protections will prevent DeletionPolicy. This can be circumvented by using a lambda to delete objects before the bucket is deleted.
@@ -69,7 +72,112 @@ Then the source account can assume the role and access the resources in the targ
         }
     ]
 }
+2. Systems manager hybrid activations can be used to manage on-premises instances.
+3. IAM role is necessary to use the Systems Manager service. (Attached to target instances)
+4. Can be used to automate patching of EC2 instances (Maintenance Windows).
 
 ## Storage Gateway
 1. Can be used to connect on-premises storage to AWS storage services.
 2. Volume Gateway can cache data on-premises and asynchronously upload data to S3.
+
+## EventBridge
+1. Near real-time event processing
+
+## Kinesis Firehose
+1. Near real-time data processing
+
+## AWS Config
+1. Can be used to monitor compliance of resources with rules.
+2. Can only be modified by the root account.
+3. Good for ongoing compliance and remediation.
+
+## Service Catalog
+1. Can be used to standardize cloudformation templates and allow users to launch them.
+    - enforce tagging
+    - enforce resource requirements
+    - limit deployments to certain regions
+    - enable versioned deployments
+    
+## CloudWatch
+1. Logs are near real time
+
+## Codepipeline
+1. Does not have the ability to create a new artifact store, must use an existing S3 bucket.
+2. Cannot make HTTP requests to external services.
+
+## CloudFormation
+1. iam:PassRole is used to allow a resource to assume a role.
+2. Good for deploying or updating resources across multiple account in a templated matter. Ideal for initial setup and bulk updates but can lack granularity.
+
+### Stack Template
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Example CloudFormation to create an EC2 instance and IAM user with EC2 read access.
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0abcdef1234567890 # Specify a valid AMI ID for your region
+      InstanceType: t2.micro
+      KeyName: my-key-pair # Specify your EC2 Key Pair for SSH access
+
+  EC2ReadOnlyPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: EC2ReadOnlyAccess
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action: ec2:Describe*
+            Resource: '*'
+      Users:
+        - Ref: IAMUser
+
+  IAMUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: EC2ReadOnlyUser
+
+Outputs:
+  InstanceId:
+    Description: The Instance ID of the EC2 instance
+    Value: !Ref MyInstance
+  IAMUserName:
+    Description: IAM User with EC2 read-only access
+    Value: !Ref IAMUser
+
+### Nested Stack
+- TemplateURL is used to specify the location of the nested stack
+- Parameters are used to pass parameters to the nested stack
+- Outputs are used to pass outputs from the nested stack to the parent stack (!GetAtt NestedStack.Outputs.OutputName)
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Main stack that nests VPC and EC2 instance stacks.
+
+Resources:
+  VPCStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/mybucket/vpc-stack.yaml
+      Parameters:
+        # Add any parameters required by the VPC stack
+
+  EC2Stack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/mybucket/ec2-stack.yaml
+      Parameters:
+        VPCId: !GetAtt VPCStack.Outputs.VPCId
+        # Add any other parameters required by the EC2 stack
+
+Outputs:
+  VPCId:
+    Description: The ID of the VPC
+    Value: !GetAtt VPCStack.Outputs.VPCId
+
+  EC2InstanceId:
+    Description: The ID of the EC2 instance
+    Value: !GetAtt EC2Stack.Outputs.InstanceId
+
