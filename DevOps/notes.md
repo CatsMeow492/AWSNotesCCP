@@ -55,6 +55,7 @@ Automates the deployment of resources, including CloudFormation templates and SC
 ## IAM 
 1. Best practice for allowing cross-account access is to create a role in the target account and allow the source account to assume the role using a trust policy.
 Then the source account can assume the role and access the resources in the target account.
+
 ### Policy 
 1. Can be used with conditionals to restrict access to resources based on tags.
 
@@ -179,5 +180,10 @@ Outputs:
 
   EC2InstanceId:
     Description: The ID of the EC2 instance
-    Value: !GetAtt EC2Stack.Outputs.InstanceId
+    
+## CodeCommit
+1. Approval rule templates can be used to enforce approval rules on pull requests but cannot trigger build or test actions directly.
+
+## AWS Systems Manager Automation 
+1. Runbooks can be used to automate tasks across multiple accounts and regions. Can directly run scripts on EC2 instances.
 
