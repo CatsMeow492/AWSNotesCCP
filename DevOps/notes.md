@@ -17,7 +17,8 @@
 3. Lifecycle Event Hooks
 
 ## ALB
-1. Can directly log to S3
+1. Can directly log to S3. However not near real-time.
+2. For real time logs, use CloudWatch. Or lambda to kenesis firehose.
 
 ### Dualstack
 1. Supports both IPv4 and IPv6
@@ -186,4 +187,10 @@ Outputs:
 
 ## AWS Systems Manager Automation 
 1. Runbooks can be used to automate tasks across multiple accounts and regions. Can directly run scripts on EC2 instances.
+
+## EC2
+1. Can use "warm pools" to keep instances prepared for scaling. Pools can be used to keep instances in a stopped state and ready to be started when needed.
+
+## CodeGuru
+1. Can be used to analyze code for performance and security issues.
 
