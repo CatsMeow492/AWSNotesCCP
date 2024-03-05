@@ -4,7 +4,7 @@ import os
 
 def load_tally(filename='tally.json'):
     if not os.path.exists(filename):
-        return {'correct': 0, 'incorrect': 0}
+        return {}
     with open(filename, 'r') as file:
         return json.load(file)
 
@@ -60,22 +60,24 @@ def main():
         asked_questions.add(title)
         shuffled_options = shuffle_answers(q_data['options'])
         
+        if title not in tally:
+            tally[title] = {'correct': 0, 'incorrect': 0}
         print('\n')
         display_question_and_options(q_data['question'], shuffled_options)
         
         user_choices = get_user_choices(len(shuffled_options))
         if check_answers(shuffled_options, user_choices):
             print("Correct!")
-            tally['correct'] += 1
+            tally[title]['correct'] += 1
         else:
             print("Incorrect. Better luck next time!")
             write_failed_question_to_file(title, q_data['question'])
-            tally['incorrect'] += 1
-            if tally['incorrect'] > 1:
+            tally[title]['incorrect'] += 1
+            if tally[title]['incorrect'] > 1:
                 print("Uh oh, you've missed this question more than once")
                 print('Number of times failed:', tally['incorrect'])
             continue
-    
+        save_tally(tally)
     
 if __name__ == "__main__":
     main()
