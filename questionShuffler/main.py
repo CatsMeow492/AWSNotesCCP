@@ -1,5 +1,16 @@
 import json
 import random
+import os
+
+def load_tally(filename='tally.json'):
+    if not os.path.exists(filename):
+        return {'correct': 0, 'incorrect': 0}
+    with open(filename, 'r') as file:
+        return json.load(file)
+
+def save_tally(tally, filename='tally.json'):
+    with open(filename, 'w') as file:
+        json.dump(tally, file)
 
 def load_questions(filename='questions.json'):
     with open(filename, 'r') as file:
@@ -38,6 +49,7 @@ def write_failed_question_to_file(failed_question, q_data, filename='failed_ques
 def main():
     questions = load_questions()
     asked_questions = set()
+    tally = load_tally()
 
     while True:
         if len(asked_questions) == len(questions) or len(asked_questions) == 5:
@@ -48,16 +60,22 @@ def main():
         asked_questions.add(title)
         shuffled_options = shuffle_answers(q_data['options'])
         
-        print(title)
+        print('\n')
         display_question_and_options(q_data['question'], shuffled_options)
         
         user_choices = get_user_choices(len(shuffled_options))
         if check_answers(shuffled_options, user_choices):
             print("Correct!")
+            tally['correct'] += 1
         else:
             print("Incorrect. Better luck next time!")
             write_failed_question_to_file(title, q_data['question'])
+            tally['incorrect'] += 1
+            if tally['incorrect'] > 1:
+                print("Uh oh, you've missed this question more than once")
+                print('Number of times failed:', tally['incorrect'])
             continue
-
+    
+    
 if __name__ == "__main__":
     main()

@@ -1,28 +1,40 @@
-import openai
 import os
+from dotenv import load_dotenv
+import openai
 
-# Load your OpenAI API key
-openai.api_key = os.getenv('YOUR_OPENAI_API_KEY')
+load_dotenv()
+openai.api_key = os.getenv('OPEN_AI')
 
-# Read the contents of failed_questions.txt
-failed_questions_file = 'failed_questions.txt'
-with open(failed_questions_file, 'r') as file:
-    failed_questions = file.readlines()
+def generate_study_guide():
+    
+    print("working on it...")
+    
+    with open('questionShuffler/failed_questions.txt', 'r') as file:
+        failed_questions = file.read()
+    
+    prompt = (
+        f"I answered the following questions incorrectly.\n"
+        f"Can you generate a short intuitive study guide to help me understand the underlying concepts?\n"
+        f"I'll tip you $200 if you do a good job. Generate the study guide in .md format.\n"
+        f"{failed_questions}"
+    )
 
-# Prepare the prompt for ChatGPT
-# Note: Customize this prompt as needed to fit the style of summary you're looking for
-prompt = "Create a study guide summary based on the following topics:\n\n" + "".join(f"- {question}" for question in failed_questions)
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4-0125-preview",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ]
+        )
+        
+        with open('study_guide.md', 'w') as output_file:
+            output_file.write(response['choices'][0]['message']['content'])
+            print("Study guide generated successfully!")
+    
+    except Exception as e:
+        print(f"Error generating study guide: {str(e)}")
 
-# Query the ChatGPT API
-response = openai.Completion.create(
-  engine="text-davinci-003", # or another version if you prefer
-  prompt=prompt,
-  temperature=0.7,
-  max_tokens=500,
-  top_p=1.0,
-  frequency_penalty=0.0,
-  presence_penalty=0.0
-)
 
-# Print the generated study guide summary
-print(response.choices[0].text.strip())
+
+generate_study_guide()
