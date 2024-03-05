@@ -1692,5 +1692,231 @@
         "correct": false
       }
     ]
+  },
+  "Question #76": {
+    "question": "A company is using Amazon S3 buckets to store important documents. The company discovers that some S3 buckets are not encrypted. Currently, the company’s IAM users can create new S3 buckets without encryption. The company is implementing a new requirement that all S3 buckets must be encrypted. A DevOps engineer must implement a solution to ensure that server-side encryption is enabled on all existing S3 buckets and all new S3 buckets. The encryption must be enabled on new S3 buckets as soon as the S3 buckets are created. The default encryption type must be 256-bit Advanced Encryption Standard (AES-256). Which solution will meet these requirements?",
+    "options": [
+      {
+        "text": "Create an AWS Lambda function that is invoked periodically by an Amazon EventBridge scheduled rule. Program the Lambda function to scan all current S3 buckets for encryption status and to set AES-256 as the default encryption for any S3 bucket that does not have an encryption configuration.",
+        "correct": false
+      },
+      {
+        "text": "Set up and activate the s3-bucket-server-side-encryption-enabled AWS Config managed rule. Configure the rule to use the AWS-EnableS3BucketEncryption AWS Systems Manager Automation runbook as the remediation action. Manually run the re-evaluation process to ensure that existing S3 buckets are compliant.",
+        "correct": true
+      },
+      {
+        "text": "Create an AWS Lambda function that is invoked by an Amazon EventBridge event rule. Define the rule with an event pattern that matches the creation of new S3 buckets. Program the Lambda function to parse the EventBridge event, check the configuration of the S3 buckets from the event, and set AES-256 as the default encryption.",
+        "correct": false
+      },
+      {
+        "text": "Configure an IAM policy that denies the s3:CreateBucket action if the s3:x-amz-server-side-encryption condition key has a value that is not AES-256. Create an IAM group for all the company’s IAM users. Associate the IAM policy with the IAM group.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #77": {
+    "question": "A DevOps engineer is architecting a continuous development strategy for a company’s software as a service (SaaS) web application running on AWS. For application and security reasons, users subscribing to this application are distributed across multiple Application Load Balancers (ALBs), each of which has a dedicated Auto Scaling group and fleet of Amazon EC2 instances. The application does not require a build stage, and when it is committed to AWS CodeCommit, the application must trigger a simultaneous deployment to all ALBs, Auto Scaling groups, and EC2 fleets. Which architecture will meet these requirements with the LEAST amount of configuration?",
+    "options": [
+      {
+        "text": "Create a single AWS CodePipeline pipeline that deploys the application in parallel using unique AWS CodeDeploy applications and deployment groups created for each ALB-Auto Scaling group pair.",
+        "correct": false
+      },
+      {
+        "text": "Create a single AWS CodePipeline pipeline that deploys the application using a single AWS CodeDeploy application and single deployment group.",
+        "correct": false
+      },
+      {
+        "text": "Create a single AWS CodePipeline pipeline that deploys the application in parallel using a single AWS CodeDeploy application and unique deployment group for each ALB-Auto Scaling group pair.",
+        "correct": true
+      },
+      {
+        "text": "Create an AWS CodePipeline pipeline for each ALB-Auto Scaling group pair that deploys the application using an AWS CodeDeploy application and deployment group created for the same ALB-Auto Scaling group pair.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #78": {
+    "question": "A company is hosting a static website from an Amazon S3 bucket. The website is available to customers at example.com. The company uses an Amazon Route 53 weighted routing policy with a TTL of 1 day. The company has decided to replace the existing static website with a dynamic web application. The dynamic web application uses an Application Load Balancer (ALB) in front of a fleet of Amazon EC2 instances. On the day of production launch to customers, the company creates an additional Route 53 weighted DNS record entry that points to the ALB with a weight of 255 and a TTL of 1 hour. Two days later, a DevOps engineer notices that the previous static website is displayed sometimes when customers navigate to example.com. How can the DevOps engineer ensure that the company serves only dynamic content for example.com?",
+    "options": [
+      {
+        "text": "Delete all objects, including previous versions, from the S3 bucket that contains the static website content.",
+        "correct": false
+      },
+      {
+        "text": "Update the weighted DNS record entry that points to the S3 bucket. Apply a weight of 0. Specify the domain reset option to propagate changes immediately.",
+        "correct": false
+      },
+      {
+        "text": "Configure webpage redirect requests on the S3 bucket with a hostname that redirects to the ALB.",
+        "correct": false
+      },
+      {
+        "text": "Remove the weighted DNS record entry that points to the S3 bucket from the example.com hosted zone. Wait for DNS propagation to become complete.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #79": {
+    "question": "A company is implementing AWS CodePipeline to automate its testing process. The company wants to be notified when the execution state fails and used the following custom event pattern in Amazon EventBridge: {\"source\": [\"aws.codepipeline\"],\"detail-type\":[\"Codepipeline Action Execution State Change\"],\"detail\":{\"state\":[\"FAILED\"],\"type\":[\"category\": [\"Approval\"]}]}. Which type of events will match this event pattern?",
+    "options": [
+      {
+        "text": "Failed deploy and build actions across all the pipelines",
+        "correct": false
+      },
+      {
+        "text": "All rejected or failed approval actions across all the pipelines",
+        "correct": true
+      },
+      {
+        "text": "All the events across all pipelines",
+        "correct": false
+      },
+      {
+        "text": "Approval actions across all the pipelines",
+        "correct": false
+      }
+    ]
+  },
+  "Question #80": {
+    "question": "An application running on a set of Amazon EC2 instances in an Auto Scaling group requires a configuration file to operate. The instances are created and maintained with AWS CloudFormation. A DevOps engineer wants the instances to have the latest configuration file when launched, and wants changes to the configuration file to be reflected on all the instances with a minimal delay when the CloudFormation template is updated. Company policy requires that application configuration files be maintained along with AWS infrastructure configuration files in source control. Which solution will accomplish this?",
+    "options": [
+      {
+        "text": "In the CloudFormation template, add an AWS Config rule. Place the configuration file content in the rule’s InputParameters property, and set the Scope property to the EC2 Auto Scaling group. Add an AWS Systems Manager Resource Data Sync resource to the template to poll for updates to the configuration.",
+        "correct": false
+      },
+      {
+        "text": "In the CloudFormation template, add an EC2 launch template resource. Place the configuration file content in the launch template. Configure the cfn-init script to run when the instance is launched, and configure the cfn-hup script to poll for updates to the configuration.",
+        "correct": false
+      },
+      {
+        "text": "In the CloudFormation template, add an EC2 launch template resource. Place the configuration file content in the launch template. Add an AWS Systems Manager Resource Data Sync resource to the template to poll for updates to the configuration.",
+        "correct": false
+      },
+      {
+        "text": "In the CloudFormation template, add CloudFormation init metadata. Place the configuration file content in the metadata. Configure the cfn-init script to run when the instance is launched, and configure the cfn-hup script to poll for updates to the configuration.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #81": {
+    "question": "A company manages an application that stores logs in Amazon CloudWatch Logs. The company wants to archive the logs to an Amazon S3 bucket. Logs are rarely accessed after 90 days and must be retained for 10 years. Which combination of steps should a DevOps engineer take to meet these requirements? (Choose two.)",
+    "options": [
+      {
+        "text": "Configure a CloudWatch Logs subscription filter to use AWS Glue to transfer all logs to an S3 bucket.",
+        "correct": false
+      },
+      {
+        "text": "Configure a CloudWatch Logs subscription filter to use Amazon Kinesis Data Firehose to stream all logs to an S3 bucket.",
+        "correct": true
+      },
+      {
+        "text": "Configure a CloudWatch Logs subscription filter to stream all logs to an S3 bucket.",
+        "correct": false
+      },
+      {
+        "text": "Configure the S3 bucket lifecycle policy to transition logs to S3 Glacier after 90 days and to expire logs after 3,650 days.",
+        "correct": true
+      },
+      {
+        "text": "Configure the S3 bucket lifecycle policy to transition logs to Reduced Redundancy after 90 days and to expire logs after 3,650 days.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #82": {
+    "question": "A company is developing a new application. The application uses AWS Lambda functions for its compute tier. The company must use a canary deployment for any changes to the Lambda functions. Automated rollback must occur if any failures are reported. The company’s DevOps team needs to create the infrastructure as code (IaC) and the CI/CD pipeline for this solution. Which combination of steps will meet these requirements? (Choose three.)",
+    "options": [
+      {
+        "text": "Create an AWS CloudFormation template for the application. Define each Lambda function in the template by using the AWS::Lambda::Function resource type. In the template, include a version for the Lambda function by using the AWS::Lambda::Version resource type. Declare the CodeSha256 property. Configure an AWS::Lambda::Alias resource that references the latest version of the Lambda function.",
+        "correct": false
+      },
+      {
+        "text": "Create an AWS Serverless Application Model (AWS SAM) template for the application. Define each Lambda function in the template by using the AWS::Serverless::Function resource type. For each function, include configurations for the AutoPublishAlias property and the DeploymentPreference property. Configure the deployment configuration type to LambdaCanary10Percent10Minutes.",
+        "correct": true
+      },
+      {
+        "text": "Create an AWS CodeCommit repository. Create an AWS CodePipeline pipeline. Use the CodeCommit repository in a new source stage that starts the pipeline. Create an AWS CodeBuild project to deploy the AWS Serverless Application Model (AWS SAM) template. Upload the template and source code to the CodeCommit repository. In the CodeCommit repository, create a buildspec.yml file that includes the commands to build and deploy the SAM application.",
+        "correct": true
+      },
+      {
+        "text": "Create an AWS CodeCommit repository. Create an AWS CodePipeline pipeline. Use the CodeCommit repository in a new source stage that starts the pipeline. Create an AWS CodeDeploy deployment group that is configured for canary deployments with a DeploymentPreference type of Canary10Percent10Minutes. Upload the AWS CloudFormation template and source code to the CodeCommit repository. In the CodeCommit repository, create an appspec.yml file that includes the commands to deploy the CloudFormation template.",
+        "correct": false
+      },
+      {
+        "text": "Create an Amazon CloudWatch composite alarm for all the Lambda functions. Configure an evaluation period and dimensions for Lambda. Configure the alarm to enter the ALARM state if any errors are detected or if there is insufficient data.",
+        "correct": false
+      },
+      {
+        "text": "Create an Amazon CloudWatch alarm for each Lambda function. Configure the alarms to enter the ALARM state if any errors are detected. Configure an evaluation period, dimensions for each Lambda function and version, and the namespace as AWS/Lambda on the Errors metric.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #83": {
+    "question": "A DevOps engineer is deploying a new version of a company’s application in an AWS CodeDeploy deployment group associated with its Amazon EC2 instances. After some time, the deployment fails. The engineer realizes that all the events associated with the specific deployment ID are in a Skipped status, and code was not deployed in the instances associated with the deployment group. What are valid reasons for this failure? (Choose two.)",
+    "options": [
+      {
+        "text": "The networking configuration does not allow the EC2 instances to reach the internet via a NAT gateway or internet gateway, and the CodeDeploy endpoint cannot be reached.",
+        "correct": true
+      },
+      {
+        "text": "The IAM user who triggered the application deployment does not have permission to interact with the CodeDeploy endpoint.",
+        "correct": false
+      },
+      {
+        "text": "The target EC2 instances were not properly registered with the CodeDeploy endpoint.",
+        "correct": false
+      },
+      {
+        "text": "An instance profile with proper permissions was not attached to the target EC2 instances.",
+        "correct": true
+      },
+      {
+        "text": "The appspec.yml file was not included in the application revision.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #84": {
+    "question": "A company has a guideline that every Amazon EC2 instance must be launched from an AMI that the company’s security team produces. Every month, the security team sends an email message with the latest approved AMIs to all the development teams. The development teams use AWS CloudFormation to deploy their applications. When developers launch a new service, they have to search their email for the latest AMIs that the security department sent. A DevOps engineer wants to automate the process that the security team uses to provide the AMI IDs to the development teams. What is the MOST scalable solution that meets these requirements?",
+    "options": [
+      {
+        "text": "Direct the security team to use CloudFormation to create new versions of the AMIs and to list the AMI ARNs in an encrypted Amazon S3 object as part of the stack’s Outputs section. Instruct the developers to use a cross-stack reference to load the encrypted S3 object and obtain the most recent AMI ARNs.",
+        "correct": false
+      },
+      {
+        "text": "Direct the security team to use a CloudFormation stack to create an AWS CodePipeline pipeline that builds new AMIs and places the latest AMI ARNs in an encrypted Amazon S3 object as part of the pipeline output. Instruct the developers to use a cross-stack reference within their own CloudFormation template to obtain the S3 object location and the most recent AMI ARNs.",
+        "correct": false
+      },
+      {
+        "text": "Direct the security team to use Amazon EC2 Image Builder to create new AMIs and to place the AMI ARNs as parameters in AWS Systems Manager Parameter Store. Instruct the developers to specify a parameter of type SSM in their CloudFormation stack to obtain the most recent AMI ARNs from Parameter Store.",
+        "correct": true
+      },
+      {
+        "text": "Direct the security team to use Amazon EC2 Image Builder to create new AMIs and to create an Amazon Simple Notification Service (Amazon SNS) topic so that every development team can receive notifications. When the development teams receive a notification, instruct them to write an AWS Lambda function that will update their CloudFormation stack with the most recent AMI ARNs.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #85": {
+    "question": "An application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). A DevOps engineer is using AWS CodeDeploy to release a new version. The deployment fails during the AllowTraffic lifecycle event, but a cause for the failure is not indicated in the deployment logs. What would cause this?",
+    "options": [
+      {
+        "text": "The appspec.yml file contains an invalid script that runs in the AllowTraffic lifecycle hook.",
+        "correct": false
+      },
+      {
+        "text": "The user who initiated the deployment does not have the necessary permissions to interact with the ALB.",
+        "correct": false
+      },
+      {
+        "text": "The health checks specified for the ALB target group are misconfigured.",
+        "correct": true
+      },
+      {
+        "text": "The CodeDeploy agent was not installed in the EC2 instances that are part of the ALB target group.",
+        "correct": false
+      }
+    ]
   }
 }
