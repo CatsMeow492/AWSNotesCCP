@@ -14,7 +14,12 @@ def generate_study_guide():
     
     prompt = (
         f"I answered the following questions incorrectly.\n"
-        f"Can you generate a short intuitive study guide to help me understand the underlying concepts?\n"
+        f"Can you create a short intuitive guide as to how I could find the right answer?\n"
+        f"Answers should be concise and to the point, and also in the form:\n"
+        f"Problem: \n"
+        f"Concepts: \n"
+        f"Steps to solve: \n"
+        f"Easy way to remember: \n"
         f"I'll tip you $200 if you do a good job. Generate the study guide in .md format.\n"
         f"{failed_questions}"
     )
@@ -23,7 +28,7 @@ def generate_study_guide():
         response = openai.ChatCompletion.create(
             model="gpt-4-0125-preview",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content": "You are an expert teach of AWS."},
                 {"role": "user", "content": prompt}
             ]
         )
