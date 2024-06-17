@@ -1,6 +1,7 @@
 import json
 import random
 import os
+import webbrowser
 
 def load_tally(filename='tally.json'):
     if not os.path.exists(filename):
@@ -20,10 +21,12 @@ def shuffle_answers(options):
     random.shuffle(options)
     return options
 
-def display_question_and_options(question, options):
+def display_question_and_options(question, options, image_url=None):
     print(question)
     for idx, option in enumerate(options, start=1):
         print(f"{idx}. {option['text']}")
+    if image_url:
+        webbrowser.open(image_url)
 
 def get_user_choices(num_options):
     choices = input("Your answers (e.g., 1,3,4): ").split(',')
@@ -63,7 +66,7 @@ def main():
         if title not in tally:
             tally[title] = {'correct': 0, 'incorrect': 0}
         print('\n')
-        display_question_and_options(q_data['question'], shuffled_options)
+        display_question_and_options(q_data['question'], shuffled_options, q_data.get('image_url'))
         
         user_choices = get_user_choices(len(shuffled_options))
         if check_answers(shuffled_options, user_choices):
