@@ -422,4 +422,241 @@
       }
     ]
   }
+  {
+    "Question #21": {
+      "question": "A Machine Learning Specialist is configuring Amazon SageMaker so multiple Data Scientists can access notebooks, train models, and deploy endpoints. To ensure the best operational performance, the Specialist needs to be able to track how often the Scientists are deploying models, GPU and CPU utilization on the deployed SageMaker endpoints, and all errors that are generated when an endpoint is invoked.\nWhich services are integrated with Amazon SageMaker to track this information? (Choose two.)",
+      "options": [
+        {
+          "text": "AWS CloudTrail",
+          "correct": true
+        },
+        {
+          "text": "AWS Health",
+          "correct": false
+        },
+        {
+          "text": "AWS Trusted Advisor",
+          "correct": false
+        },
+        {
+          "text": "Amazon CloudWatch",
+          "correct": true
+        },
+        {
+          "text": "AWS Config",
+          "correct": false
+        }
+      ]
+    },
+    "Question #22": {
+      "question": "A retail chain has been ingesting purchasing records from its network of 20,000 stores to Amazon S3 using Amazon Kinesis Data Firehose. To support training an improved machine learning model, training records will require new but simple transformations, and some attributes will be combined. The model needs to be retrained daily.\nGiven the large number of stores and the legacy data ingestion, which change will require the LEAST amount of development effort?",
+      "options": [
+        {
+          "text": "Require that the stores switch to capturing their data locally on AWS Storage Gateway for loading into Amazon S3, then use AWS Glue to do the transformation.",
+          "correct": false
+        },
+        {
+          "text": "Deploy an Amazon EMR cluster running Apache Spark with the transformation logic, and have the cluster run each day on the accumulating records in Amazon S3, outputting new/transformed records to Amazon S3.",
+          "correct": false
+        },
+        {
+          "text": "Spin up a fleet of Amazon EC2 instances with the transformation logic, have them transform the data records accumulating on Amazon S3, and output the transformed records to Amazon S3.",
+          "correct": false
+        },
+        {
+          "text": "Insert an Amazon Kinesis Data Analytics stream downstream of the Kinesis Data Firehose stream that transforms raw record attributes into simple transformed values using SQL.",
+          "correct": true
+        }
+      ]
+    },
+    "Question #23": {
+      "question": "A Machine Learning Specialist is building a convolutional neural network (CNN) that will classify 10 types of animals. The Specialist has built a series of layers in a neural network that will take an input image of an animal, pass it through a series of convolutional and pooling layers, and then finally pass it through a dense and fully connected layer with 10 nodes. The Specialist would like to get an output from the neural network that is a probability distribution of how likely it is that the input image belongs to each of the 10 classes.\nWhich function will produce the desired output?",
+      "options": [
+        {
+          "text": "Dropout",
+          "correct": false
+        },
+        {
+          "text": "Smooth L1 loss",
+          "correct": false
+        },
+        {
+          "text": "Softmax",
+          "correct": true
+        },
+        {
+          "text": "Rectified linear units (ReLU)",
+          "correct": false
+        }
+      ]
+    },
+    "Question #24": {
+      "question": "A Machine Learning Specialist trained a regression model, but the first iteration needs optimizing. The Specialist needs to understand whether the model is more frequently overestimating or underestimating the target.\nWhat option can the Specialist use to determine whether it is overestimating or underestimating the target value?",
+      "options": [
+        {
+          "text": "Root Mean Square Error (RMSE)",
+          "correct": false
+        },
+        {
+          "text": "Residual plots",
+          "correct": true
+        },
+        {
+          "text": "Area under the curve",
+          "correct": false
+        },
+        {
+          "text": "Confusion matrix",
+          "correct": false
+        }
+      ]
+    },
+    "Question #25": {
+      "question": "A company wants to classify user behavior as either fraudulent or normal. Based on internal research, a Machine Learning Specialist would like to build a binary classifier based on two features: age of account and transaction month. The class distribution for these features is illustrated in the figure provided.\n\nBased on this information, which model would have the HIGHEST recall with respect to the fraudulent class?",
+      "image_url": "https://www.examtopics.com/assets/media/exam-media/04145/0001600001.jpg",
+      "options": [
+        {
+          "text": "Decision tree",
+          "correct": false
+        },
+        {
+          "text": "Linear support vector machine (SVM)",
+          "correct": false
+        },
+        {
+          "text": "Naive Bayesian classifier",
+          "correct": true
+        },
+        {
+          "text": "Single Perceptron with sigmoidal activation function",
+          "correct": false
+        }
+      ]
+    },
+    "Question #26": {
+      "question": "A Machine Learning Specialist kicks off a hyperparameter tuning job for a tree-based ensemble model using Amazon SageMaker with Area Under the ROC Curve (AUC) as the objective metric. This workflow will eventually be deployed in a pipeline that retrains and tunes hyperparameters each night to model click-through on data that goes stale every 24 hours.\nWith the goal of decreasing the amount of time it takes to train these models, and ultimately to decrease costs, the Specialist wants to reconfigure the input hyperparameter range(s).\nWhich visualization will accomplish this?",
+      "options": [
+        {
+          "text": "A histogram showing whether the most important input feature is Gaussian.",
+          "correct": false
+        },
+        {
+          "text": "A scatter plot with points colored by target variable that uses t-Distributed Stochastic Neighbor Embedding (t-SNE) to visualize the large number of input variables in an easier-to-read dimension.",
+          "correct": false
+        },
+        {
+          "text": "A scatter plot showing the performance of the objective metric over each training iteration.",
+          "correct": false
+        },
+        {
+          "text": "A scatter plot showing the correlation between maximum tree depth and the objective metric.",
+          "correct": true
+        }
+      ]
+    },
+    "Question #27": {
+      "question": "A Machine Learning Specialist is creating a new natural language processing application that processes a dataset comprised of 1 million sentences. The aim is to then run Word2Vec to generate embeddings of the sentences and enable different types of predictions.\nHere is an example from the dataset:\n\"The quck BROWN FOX jumps over the lazy dog.\"\nWhich of the following are the operations the Specialist needs to perform to correctly sanitize and prepare the data in a repeatable manner? (Choose three.)",
+      "options": [
+        {
+          "text": "Perform part-of-speech tagging and keep the action verb and the nouns only.",
+          "correct": false
+        },
+        {
+          "text": "Normalize all words by making the sentence lowercase.",
+          "correct": true
+        },
+        {
+          "text": "Remove stop words using an English stopword dictionary.",
+          "correct": true
+        },
+        {
+          "text": "Correct the typography on \"quck\" to \"quick.\"",
+          "correct": false
+        },
+        {
+          "text": "One-hot encode all words in the sentence.",
+          "correct": false
+        },
+        {
+          "text": "Tokenize the sentence into words.",
+          "correct": true
+        }
+      ]
+    },
+    "Question #28": {
+      "question": "A company is using Amazon Polly to translate plaintext documents to speech for automated company announcements. However, company acronyms are being mispronounced in the current documents.\nHow should a Machine Learning Specialist address this issue for future documents?",
+      "options": [
+        {
+          "text": "Convert current documents to SSML with pronunciation tags.",
+          "correct": false
+        },
+        {
+          "text": "Create an appropriate pronunciation lexicon.",
+          "correct": true
+        },
+        {
+          "text": "Output speech marks to guide in pronunciation.",
+          "correct": false
+        },
+        {
+          "text": "Use Amazon Lex to preprocess the text files for pronunciation.",
+          "correct": false
+        }
+      ]
+    },
+    "Question #29": {
+      "question": "An insurance company is developing a new device for vehicles that uses a camera to observe drivers' behavior and alert them when they appear distracted. The company created approximately 10,000 training images in a controlled environment that a Machine Learning Specialist will use to train and evaluate machine learning models.\nDuring the model evaluation, the Specialist notices that the training error rate diminishes faster as the number of epochs increases and the model is not accurately inferring on the unseen test images.\nWhich of the following should be used to resolve this issue? (Choose two.)",
+      "options": [
+        {
+          "text": "Add vanishing gradient to the model.",
+          "correct": false
+        },
+        {
+          "text": "Perform data augmentation on the training data.",
+          "correct": true
+        },
+        {
+          "text": "Make the neural network architecture complex.",
+          "correct": false
+        },
+        {
+          "text": "Use gradient checking in the model.",
+          "correct": false
+        },
+        {
+          "text": "Add L2 regularization to the model.",
+          "correct": true
+        }
+      ]
+    },
+    "Question #30": {
+      "question": "When submitting Amazon SageMaker training jobs using one of the built-in algorithms, which common parameters MUST be specified? (Choose three.)",
+      "options": [
+        {
+          "text": "The training channel identifying the location of training data on an Amazon S3 bucket.",
+          "correct": false
+        },
+        {
+          "text": "The validation channel identifying the location of validation data on an Amazon S3 bucket.",
+          "correct": false
+        },
+        {
+          "text": "The IAM role that Amazon SageMaker can assume to perform tasks on behalf of the users.",
+          "correct": true
+        },
+        {
+          "text": "Hyperparameters in a JSON array as documented for the algorithm used.",
+          "correct": false
+        },
+        {
+          "text": "The Amazon EC2 instance class specifying whether training will be run using CPU or GPU.",
+          "correct": true
+        },
+        {
+          "text": "The output path specifying where on an Amazon S3 bucket the trained model will persist.",
+          "correct": true
+        }
+      ]
+    }
+  }
 }
