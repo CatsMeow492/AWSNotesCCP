@@ -421,242 +421,1101 @@
         "correct": true
       }
     ]
-  }
-  {
-    "Question #21": {
-      "question": "A Machine Learning Specialist is configuring Amazon SageMaker so multiple Data Scientists can access notebooks, train models, and deploy endpoints. To ensure the best operational performance, the Specialist needs to be able to track how often the Scientists are deploying models, GPU and CPU utilization on the deployed SageMaker endpoints, and all errors that are generated when an endpoint is invoked.\nWhich services are integrated with Amazon SageMaker to track this information? (Choose two.)",
-      "options": [
-        {
-          "text": "AWS CloudTrail",
-          "correct": true
-        },
-        {
-          "text": "AWS Health",
-          "correct": false
-        },
-        {
-          "text": "AWS Trusted Advisor",
-          "correct": false
-        },
-        {
-          "text": "Amazon CloudWatch",
-          "correct": true
-        },
-        {
-          "text": "AWS Config",
-          "correct": false
-        }
-      ]
-    },
-    "Question #22": {
-      "question": "A retail chain has been ingesting purchasing records from its network of 20,000 stores to Amazon S3 using Amazon Kinesis Data Firehose. To support training an improved machine learning model, training records will require new but simple transformations, and some attributes will be combined. The model needs to be retrained daily.\nGiven the large number of stores and the legacy data ingestion, which change will require the LEAST amount of development effort?",
-      "options": [
-        {
-          "text": "Require that the stores switch to capturing their data locally on AWS Storage Gateway for loading into Amazon S3, then use AWS Glue to do the transformation.",
-          "correct": false
-        },
-        {
-          "text": "Deploy an Amazon EMR cluster running Apache Spark with the transformation logic, and have the cluster run each day on the accumulating records in Amazon S3, outputting new/transformed records to Amazon S3.",
-          "correct": false
-        },
-        {
-          "text": "Spin up a fleet of Amazon EC2 instances with the transformation logic, have them transform the data records accumulating on Amazon S3, and output the transformed records to Amazon S3.",
-          "correct": false
-        },
-        {
-          "text": "Insert an Amazon Kinesis Data Analytics stream downstream of the Kinesis Data Firehose stream that transforms raw record attributes into simple transformed values using SQL.",
-          "correct": true
-        }
-      ]
-    },
-    "Question #23": {
-      "question": "A Machine Learning Specialist is building a convolutional neural network (CNN) that will classify 10 types of animals. The Specialist has built a series of layers in a neural network that will take an input image of an animal, pass it through a series of convolutional and pooling layers, and then finally pass it through a dense and fully connected layer with 10 nodes. The Specialist would like to get an output from the neural network that is a probability distribution of how likely it is that the input image belongs to each of the 10 classes.\nWhich function will produce the desired output?",
-      "options": [
-        {
-          "text": "Dropout",
-          "correct": false
-        },
-        {
-          "text": "Smooth L1 loss",
-          "correct": false
-        },
-        {
-          "text": "Softmax",
-          "correct": true
-        },
-        {
-          "text": "Rectified linear units (ReLU)",
-          "correct": false
-        }
-      ]
-    },
-    "Question #24": {
-      "question": "A Machine Learning Specialist trained a regression model, but the first iteration needs optimizing. The Specialist needs to understand whether the model is more frequently overestimating or underestimating the target.\nWhat option can the Specialist use to determine whether it is overestimating or underestimating the target value?",
-      "options": [
-        {
-          "text": "Root Mean Square Error (RMSE)",
-          "correct": false
-        },
-        {
-          "text": "Residual plots",
-          "correct": true
-        },
-        {
-          "text": "Area under the curve",
-          "correct": false
-        },
-        {
-          "text": "Confusion matrix",
-          "correct": false
-        }
-      ]
-    },
-    "Question #25": {
-      "question": "A company wants to classify user behavior as either fraudulent or normal. Based on internal research, a Machine Learning Specialist would like to build a binary classifier based on two features: age of account and transaction month. The class distribution for these features is illustrated in the figure provided.\n\nBased on this information, which model would have the HIGHEST recall with respect to the fraudulent class?",
-      "image_url": "https://www.examtopics.com/assets/media/exam-media/04145/0001600001.jpg",
-      "options": [
-        {
-          "text": "Decision tree",
-          "correct": false
-        },
-        {
-          "text": "Linear support vector machine (SVM)",
-          "correct": false
-        },
-        {
-          "text": "Naive Bayesian classifier",
-          "correct": true
-        },
-        {
-          "text": "Single Perceptron with sigmoidal activation function",
-          "correct": false
-        }
-      ]
-    },
-    "Question #26": {
-      "question": "A Machine Learning Specialist kicks off a hyperparameter tuning job for a tree-based ensemble model using Amazon SageMaker with Area Under the ROC Curve (AUC) as the objective metric. This workflow will eventually be deployed in a pipeline that retrains and tunes hyperparameters each night to model click-through on data that goes stale every 24 hours.\nWith the goal of decreasing the amount of time it takes to train these models, and ultimately to decrease costs, the Specialist wants to reconfigure the input hyperparameter range(s).\nWhich visualization will accomplish this?",
-      "options": [
-        {
-          "text": "A histogram showing whether the most important input feature is Gaussian.",
-          "correct": false
-        },
-        {
-          "text": "A scatter plot with points colored by target variable that uses t-Distributed Stochastic Neighbor Embedding (t-SNE) to visualize the large number of input variables in an easier-to-read dimension.",
-          "correct": false
-        },
-        {
-          "text": "A scatter plot showing the performance of the objective metric over each training iteration.",
-          "correct": false
-        },
-        {
-          "text": "A scatter plot showing the correlation between maximum tree depth and the objective metric.",
-          "correct": true
-        }
-      ]
-    },
-    "Question #27": {
-      "question": "A Machine Learning Specialist is creating a new natural language processing application that processes a dataset comprised of 1 million sentences. The aim is to then run Word2Vec to generate embeddings of the sentences and enable different types of predictions.\nHere is an example from the dataset:\n\"The quck BROWN FOX jumps over the lazy dog.\"\nWhich of the following are the operations the Specialist needs to perform to correctly sanitize and prepare the data in a repeatable manner? (Choose three.)",
-      "options": [
-        {
-          "text": "Perform part-of-speech tagging and keep the action verb and the nouns only.",
-          "correct": false
-        },
-        {
-          "text": "Normalize all words by making the sentence lowercase.",
-          "correct": true
-        },
-        {
-          "text": "Remove stop words using an English stopword dictionary.",
-          "correct": true
-        },
-        {
-          "text": "Correct the typography on \"quck\" to \"quick.\"",
-          "correct": false
-        },
-        {
-          "text": "One-hot encode all words in the sentence.",
-          "correct": false
-        },
-        {
-          "text": "Tokenize the sentence into words.",
-          "correct": true
-        }
-      ]
-    },
-    "Question #28": {
-      "question": "A company is using Amazon Polly to translate plaintext documents to speech for automated company announcements. However, company acronyms are being mispronounced in the current documents.\nHow should a Machine Learning Specialist address this issue for future documents?",
-      "options": [
-        {
-          "text": "Convert current documents to SSML with pronunciation tags.",
-          "correct": false
-        },
-        {
-          "text": "Create an appropriate pronunciation lexicon.",
-          "correct": true
-        },
-        {
-          "text": "Output speech marks to guide in pronunciation.",
-          "correct": false
-        },
-        {
-          "text": "Use Amazon Lex to preprocess the text files for pronunciation.",
-          "correct": false
-        }
-      ]
-    },
-    "Question #29": {
-      "question": "An insurance company is developing a new device for vehicles that uses a camera to observe drivers' behavior and alert them when they appear distracted. The company created approximately 10,000 training images in a controlled environment that a Machine Learning Specialist will use to train and evaluate machine learning models.\nDuring the model evaluation, the Specialist notices that the training error rate diminishes faster as the number of epochs increases and the model is not accurately inferring on the unseen test images.\nWhich of the following should be used to resolve this issue? (Choose two.)",
-      "options": [
-        {
-          "text": "Add vanishing gradient to the model.",
-          "correct": false
-        },
-        {
-          "text": "Perform data augmentation on the training data.",
-          "correct": true
-        },
-        {
-          "text": "Make the neural network architecture complex.",
-          "correct": false
-        },
-        {
-          "text": "Use gradient checking in the model.",
-          "correct": false
-        },
-        {
-          "text": "Add L2 regularization to the model.",
-          "correct": true
-        }
-      ]
-    },
-    "Question #30": {
-      "question": "When submitting Amazon SageMaker training jobs using one of the built-in algorithms, which common parameters MUST be specified? (Choose three.)",
-      "options": [
-        {
-          "text": "The training channel identifying the location of training data on an Amazon S3 bucket.",
-          "correct": false
-        },
-        {
-          "text": "The validation channel identifying the location of validation data on an Amazon S3 bucket.",
-          "correct": false
-        },
-        {
-          "text": "The IAM role that Amazon SageMaker can assume to perform tasks on behalf of the users.",
-          "correct": true
-        },
-        {
-          "text": "Hyperparameters in a JSON array as documented for the algorithm used.",
-          "correct": false
-        },
-        {
-          "text": "The Amazon EC2 instance class specifying whether training will be run using CPU or GPU.",
-          "correct": true
-        },
-        {
-          "text": "The output path specifying where on an Amazon S3 bucket the trained model will persist.",
-          "correct": true
-        }
-      ]
-    }
+  },
+  "Question #21": {
+    "question": "A Machine Learning Specialist is configuring Amazon SageMaker so multiple Data Scientists can access notebooks, train models, and deploy endpoints. To ensure the best operational performance, the Specialist needs to be able to track how often the Scientists are deploying models, GPU and CPU utilization on the deployed SageMaker endpoints, and all errors that are generated when an endpoint is invoked.\nWhich services are integrated with Amazon SageMaker to track this information? (Choose two.)",
+    "options": [
+      {
+        "text": "AWS CloudTrail",
+        "correct": true
+      },
+      {
+        "text": "AWS Health",
+        "correct": false
+      },
+      {
+        "text": "AWS Trusted Advisor",
+        "correct": false
+      },
+      {
+        "text": "Amazon CloudWatch",
+        "correct": true
+      },
+      {
+        "text": "AWS Config",
+        "correct": false
+      }
+    ]
+  },
+  "Question #22": {
+    "question": "A retail chain has been ingesting purchasing records from its network of 20,000 stores to Amazon S3 using Amazon Kinesis Data Firehose. To support training an improved machine learning model, training records will require new but simple transformations, and some attributes will be combined. The model needs to be retrained daily.\nGiven the large number of stores and the legacy data ingestion, which change will require the LEAST amount of development effort?",
+    "options": [
+      {
+        "text": "Require that the stores switch to capturing their data locally on AWS Storage Gateway for loading into Amazon S3, then use AWS Glue to do the transformation.",
+        "correct": false
+      },
+      {
+        "text": "Deploy an Amazon EMR cluster running Apache Spark with the transformation logic, and have the cluster run each day on the accumulating records in Amazon S3, outputting new/transformed records to Amazon S3.",
+        "correct": false
+      },
+      {
+        "text": "Spin up a fleet of Amazon EC2 instances with the transformation logic, have them transform the data records accumulating on Amazon S3, and output the transformed records to Amazon S3.",
+        "correct": false
+      },
+      {
+        "text": "Insert an Amazon Kinesis Data Analytics stream downstream of the Kinesis Data Firehose stream that transforms raw record attributes into simple transformed values using SQL.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #23": {
+    "question": "A Machine Learning Specialist is building a convolutional neural network (CNN) that will classify 10 types of animals. The Specialist has built a series of layers in a neural network that will take an input image of an animal, pass it through a series of convolutional and pooling layers, and then finally pass it through a dense and fully connected layer with 10 nodes. The Specialist would like to get an output from the neural network that is a probability distribution of how likely it is that the input image belongs to each of the 10 classes.\nWhich function will produce the desired output?",
+    "options": [
+      {
+        "text": "Dropout",
+        "correct": false
+      },
+      {
+        "text": "Smooth L1 loss",
+        "correct": false
+      },
+      {
+        "text": "Softmax",
+        "correct": true
+      },
+      {
+        "text": "Rectified linear units (ReLU)",
+        "correct": false
+      }
+    ]
+  },
+  "Question #24": {
+    "question": "A Machine Learning Specialist trained a regression model, but the first iteration needs optimizing. The Specialist needs to understand whether the model is more frequently overestimating or underestimating the target.\nWhat option can the Specialist use to determine whether it is overestimating or underestimating the target value?",
+    "options": [
+      {
+        "text": "Root Mean Square Error (RMSE)",
+        "correct": false
+      },
+      {
+        "text": "Residual plots",
+        "correct": true
+      },
+      {
+        "text": "Area under the curve",
+        "correct": false
+      },
+      {
+        "text": "Confusion matrix",
+        "correct": false
+      }
+    ]
+  },
+  "Question #25": {
+    "question": "A company wants to classify user behavior as either fraudulent or normal. Based on internal research, a Machine Learning Specialist would like to build a binary classifier based on two features: age of account and transaction month. The class distribution for these features is illustrated in the figure provided.\n\nBased on this information, which model would have the HIGHEST recall with respect to the fraudulent class?",
+    "image_url": "https://www.examtopics.com/assets/media/exam-media/04145/0001600001.jpg",
+    "options": [
+      {
+        "text": "Decision tree",
+        "correct": false
+      },
+      {
+        "text": "Linear support vector machine (SVM)",
+        "correct": false
+      },
+      {
+        "text": "Naive Bayesian classifier",
+        "correct": true
+      },
+      {
+        "text": "Single Perceptron with sigmoidal activation function",
+        "correct": false
+      }
+    ]
+  },
+  "Question #26": {
+    "question": "A Machine Learning Specialist kicks off a hyperparameter tuning job for a tree-based ensemble model using Amazon SageMaker with Area Under the ROC Curve (AUC) as the objective metric. This workflow will eventually be deployed in a pipeline that retrains and tunes hyperparameters each night to model click-through on data that goes stale every 24 hours.\nWith the goal of decreasing the amount of time it takes to train these models, and ultimately to decrease costs, the Specialist wants to reconfigure the input hyperparameter range(s).\nWhich visualization will accomplish this?",
+    "options": [
+      {
+        "text": "A histogram showing whether the most important input feature is Gaussian.",
+        "correct": false
+      },
+      {
+        "text": "A scatter plot with points colored by target variable that uses t-Distributed Stochastic Neighbor Embedding (t-SNE) to visualize the large number of input variables in an easier-to-read dimension.",
+        "correct": false
+      },
+      {
+        "text": "A scatter plot showing the performance of the objective metric over each training iteration.",
+        "correct": false
+      },
+      {
+        "text": "A scatter plot showing the correlation between maximum tree depth and the objective metric.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #27": {
+    "question": "A Machine Learning Specialist is creating a new natural language processing application that processes a dataset comprised of 1 million sentences. The aim is to then run Word2Vec to generate embeddings of the sentences and enable different types of predictions.\nHere is an example from the dataset:\n\"The quck BROWN FOX jumps over the lazy dog.\"\nWhich of the following are the operations the Specialist needs to perform to correctly sanitize and prepare the data in a repeatable manner? (Choose three.)",
+    "options": [
+      {
+        "text": "Perform part-of-speech tagging and keep the action verb and the nouns only.",
+        "correct": false
+      },
+      {
+        "text": "Normalize all words by making the sentence lowercase.",
+        "correct": true
+      },
+      {
+        "text": "Remove stop words using an English stopword dictionary.",
+        "correct": true
+      },
+      {
+        "text": "Correct the typography on \"quck\" to \"quick.\"",
+        "correct": false
+      },
+      {
+        "text": "One-hot encode all words in the sentence.",
+        "correct": false
+      },
+      {
+        "text": "Tokenize the sentence into words.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #28": {
+    "question": "A company is using Amazon Polly to translate plaintext documents to speech for automated company announcements. However, company acronyms are being mispronounced in the current documents.\nHow should a Machine Learning Specialist address this issue for future documents?",
+    "options": [
+      {
+        "text": "Convert current documents to SSML with pronunciation tags.",
+        "correct": false
+      },
+      {
+        "text": "Create an appropriate pronunciation lexicon.",
+        "correct": true
+      },
+      {
+        "text": "Output speech marks to guide in pronunciation.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon Lex to preprocess the text files for pronunciation.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #29": {
+    "question": "An insurance company is developing a new device for vehicles that uses a camera to observe drivers' behavior and alert them when they appear distracted. The company created approximately 10,000 training images in a controlled environment that a Machine Learning Specialist will use to train and evaluate machine learning models.\nDuring the model evaluation, the Specialist notices that the training error rate diminishes faster as the number of epochs increases and the model is not accurately inferring on the unseen test images.\nWhich of the following should be used to resolve this issue? (Choose two.)",
+    "options": [
+      {
+        "text": "Add vanishing gradient to the model.",
+        "correct": false
+      },
+      {
+        "text": "Perform data augmentation on the training data.",
+        "correct": true
+      },
+      {
+        "text": "Make the neural network architecture complex.",
+        "correct": false
+      },
+      {
+        "text": "Use gradient checking in the model.",
+        "correct": false
+      },
+      {
+        "text": "Add L2 regularization to the model.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #30": {
+    "question": "When submitting Amazon SageMaker training jobs using one of the built-in algorithms, which common parameters MUST be specified? (Choose three.)",
+    "options": [
+      {
+        "text": "The training channel identifying the location of training data on an Amazon S3 bucket.",
+        "correct": false
+      },
+      {
+        "text": "The validation channel identifying the location of validation data on an Amazon S3 bucket.",
+        "correct": false
+      },
+      {
+        "text": "The IAM role that Amazon SageMaker can assume to perform tasks on behalf of the users.",
+        "correct": true
+      },
+      {
+        "text": "Hyperparameters in a JSON array as documented for the algorithm used.",
+        "correct": false
+      },
+      {
+        "text": "The Amazon EC2 instance class specifying whether training will be run using CPU or GPU.",
+        "correct": true
+      },
+      {
+        "text": "The output path specifying where on an Amazon S3 bucket the trained model will persist.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #31": {
+    "question": "A monitoring service generates 1 TB of scale metrics record data every minute. A Research team performs queries on this data using Amazon Athena. The queries run slowly due to the large volume of data, and the team requires better performance.\nHow should the records be stored in Amazon S3 to improve query performance?",
+    "options": [
+      {
+        "text": "CSV files",
+        "correct": false
+      },
+      {
+        "text": "Parquet files",
+        "correct": true
+      },
+      {
+        "text": "Compressed JSON",
+        "correct": false
+      },
+      {
+        "text": "RecordIO",
+        "correct": false
+      }
+    ]
+  },
+  "Question #32": {
+    "question": "Machine Learning Specialist is working with a media company to perform classification on popular articles from the company's website. The company is using random forests to classify how popular an article will be before it is published. A sample of the data being used is below.\n\nGiven the dataset, the Specialist wants to convert the Day_Of_Week column to binary values.\nWhat technique should be used to convert this column to binary values?",
+    "image_url": "https://www.examtopics.com/assets/media/exam-media/04145/0002100001.png",
+    "options": [
+      {
+        "text": "Binarization",
+        "correct": false
+      },
+      {
+        "text": "One-hot encoding",
+        "correct": true
+      },
+      {
+        "text": "Tokenization",
+        "correct": false
+      },
+      {
+        "text": "Normalization transformation",
+        "correct": false
+      }
+    ]
+  },
+  "Question #33": {
+    "question": "A gaming company has launched an online game where people can start playing for free, but they need to pay if they choose to use certain features. The company needs to build an automated system to predict whether or not a new user will become a paid user within 1 year. The company has gathered a labeled dataset from 1 million users.\nThe training dataset consists of 1,000 positive samples (from users who ended up paying within 1 year) and 999,000 negative samples (from users who did not use any paid features). Each data sample consists of 200 features including user age, device, location, and play patterns.\nUsing this dataset for training, the Data Science team trained a random forest model that converged with over 99% accuracy on the training set. However, the prediction results on a test dataset were not satisfactory\nWhich of the following approaches should the Data Science team take to mitigate this issue? (Choose two.)",
+    "options": [
+      {
+        "text": "Add more deep trees to the random forest to enable the model to learn more features.",
+        "correct": false
+      },
+      {
+        "text": "Include a copy of the samples in the test dataset in the training dataset.",
+        "correct": false
+      },
+      {
+        "text": "Generate more positive samples by duplicating the positive samples and adding a small amount of noise to the duplicated data.",
+        "correct": true
+      },
+      {
+        "text": "Change the cost function so that false negatives have a higher impact on the cost value than false positives.",
+        "correct": true
+      },
+      {
+        "text": "Change the cost function so that false positives have a higher impact on the cost value than false negatives.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #34": {
+    "question": "A Data Scientist is developing a machine learning model to predict future patient outcomes based on information collected about each patient and their treatment plans. The model should output a continuous value as its prediction. The data available includes labeled outcomes for a set of 4,000 patients. The study was conducted on a group of individuals over the age of 65 who have a particular disease that is known to worsen with age.\nInitial models have performed poorly. While reviewing the underlying data, the Data Scientist notices that, out of 4,000 patient observations, there are 450 where the patient age has been input as 0. The other features for these observations appear normal compared to the rest of the sample population\nHow should the Data Scientist correct this issue?",
+    "options": [
+      {
+        "text": "Drop all records from the dataset where age has been set to 0.",
+        "correct": false
+      },
+      {
+        "text": "Replace the age field value for records with a value of 0 with the mean or median value from the dataset.",
+        "correct": true
+      },
+      {
+        "text": "Drop the age feature from the dataset and train the model using the rest of the features.",
+        "correct": false
+      },
+      {
+        "text": "Use k-means clustering to handle missing features.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #35": {
+    "question": "A Data Science team is designing a dataset repository where it will store a large amount of training data commonly used in its machine learning models. As Data Scientists may create an arbitrary number of new datasets every day, the solution has to scale automatically and be cost-effective. Also, it must be possible to explore the data using SQL.\nWhich storage scheme is MOST adapted to this scenario?",
+    "options": [
+      {
+        "text": "Store datasets as files in Amazon S3.",
+        "correct": true
+      },
+      {
+        "text": "Store datasets as files in an Amazon EBS volume attached to an Amazon EC2 instance.",
+        "correct": false
+      },
+      {
+        "text": "Store datasets as tables in a multi-node Amazon Redshift cluster.",
+        "correct": false
+      },
+      {
+        "text": "Store datasets as global tables in Amazon DynamoDB.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #36": {
+    "question": "A Machine Learning Specialist deployed a model that provides product recommendations on a company's website. Initially, the model was performing very well and resulted in customers buying more products on average. However, within the past few months, the Specialist has noticed that the effect of product recommendations has diminished and customers are starting to return to their original habits of spending less. The Specialist is unsure of what happened, as the model has not changed from its initial deployment over a year ago.\nWhich method should the Specialist try to improve model performance?",
+    "options": [
+      {
+        "text": "The model needs to be completely re-engineered because it is unable to handle product inventory changes.",
+        "correct": false
+      },
+      {
+        "text": "The model's hyperparameters should be periodically updated to prevent drift.",
+        "correct": false
+      },
+      {
+        "text": "The model should be periodically retrained from scratch using the original data while adding a regularization term to handle product inventory changes.",
+        "correct": false
+      },
+      {
+        "text": "The model should be periodically retrained using the original training data plus new data as product inventory changes.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #37": {
+    "question": "A Machine Learning Specialist working for an online fashion company wants to build a data ingestion solution for the company's Amazon S3-based data lake.\nThe Specialist wants to create a set of ingestion mechanisms that will enable future capabilities comprised of:\n✑ Real-time analytics\n✑ Interactive analytics of historical data\n✑ Clickstream analytics\n✑ Product recommendations\nWhich services should the Specialist use?",
+    "options": [
+      {
+        "text": "AWS Glue as the data catalog; Amazon Kinesis Data Streams and Amazon Kinesis Data Analytics for real-time data insights; Amazon Kinesis Data Firehose for delivery to Amazon ES for clickstream analytics; Amazon EMR to generate personalized product recommendations.",
+        "correct": true
+      },
+      {
+        "text": "Amazon Athena as the data catalog: Amazon Kinesis Data Streams and Amazon Kinesis Data Analytics for near-real-time data insights; Amazon Kinesis Data Firehose for clickstream analytics; AWS Glue to generate personalized product recommendations.",
+        "correct": false
+      },
+      {
+        "text": "AWS Glue as the data catalog; Amazon Kinesis Data Streams and Amazon Kinesis Data Analytics for historical data insights; Amazon Kinesis Data Firehose for delivery to Amazon ES for clickstream analytics; Amazon EMR to generate personalized product recommendations.",
+        "correct": false
+      },
+      {
+        "text": "Amazon Athena as the data catalog; Amazon Kinesis Data Streams and Amazon Kinesis Data Analytics for historical data insights; Amazon DynamoDB streams for clickstream analytics; AWS Glue to generate personalized product recommendations.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #38": {
+    "question": "A company is observing low accuracy while training on the default built-in image classification algorithm in Amazon SageMaker. The Data Science team wants to use an Inception neural network architecture instead of a ResNet architecture.\nWhich of the following will accomplish this? (Choose two.)",
+    "options": [
+      {
+        "text": "Customize the built-in image classification algorithm to use Inception and use this for model training.",
+        "correct": false
+      },
+      {
+        "text": "Create a support case with the SageMaker team to change the default image classification algorithm to Inception.",
+        "correct": false
+      },
+      {
+        "text": "Bundle a Docker container with TensorFlow Estimator loaded with an Inception network and use this for model training.",
+        "correct": true
+      },
+      {
+        "text": "Use custom code in Amazon SageMaker with TensorFlow Estimator to load the model with an Inception network, and use this for model training.",
+        "correct": true
+      },
+      {
+        "text": "Download and apt-get install the inception network code into an Amazon EC2 instance and use this instance as a Jupyter notebook in Amazon SageMaker.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #39": {
+    "question": "A Machine Learning Specialist built an image classification deep learning model. However, the Specialist ran into an overfitting problem in which the training and testing accuracies were 99% and 75%, respectively.\nHow should the Specialist address this issue and what is the reason behind it?",
+    "options": [
+      {
+        "text": "The learning rate should be increased because the optimization process was trapped at a local minimum.",
+        "correct": false
+      },
+      {
+        "text": "The dropout rate at the flatten layer should be increased because the model is not generalized enough.",
+        "correct": true
+      },
+      {
+        "text": "The dimensionality of dense layer next to the flatten layer should be increased because the model is not complex enough.",
+        "correct": false
+      },
+      {
+        "text": "The epoch number should be increased because the optimization process was terminated before it reached the global minimum.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #40": {
+    "question": "A Machine Learning team uses Amazon SageMaker to train an Apache MXNet handwritten digit classifier model using a research dataset. The team wants to receive a notification when the model is overfitting. Auditors want to view the Amazon SageMaker log activity report to ensure there are no unauthorized API calls.\nWhat should the Machine Learning team do to address the requirements with the least amount of code and fewest steps?",
+    "options": [
+      {
+        "text": "Implement an AWS Lambda function to log Amazon SageMaker API calls to Amazon S3. Add code to push a custom metric to Amazon CloudWatch. Create an alarm in CloudWatch with Amazon SNS to receive a notification when the model is overfitting.",
+        "correct": false
+      },
+      {
+        "text": "Use AWS CloudTrail to log Amazon SageMaker API calls to Amazon S3. Add code to push a custom metric to Amazon CloudWatch. Create an alarm in CloudWatch with Amazon SNS to receive a notification when the model is overfitting.",
+        "correct": true
+      },
+      {
+        "text": "Implement an AWS Lambda function to log Amazon SageMaker API calls to AWS CloudTrail. Add code to push a custom metric to Amazon CloudWatch. Create an alarm in CloudWatch with Amazon SNS to receive a notification when the model is overfitting.",
+        "correct": false
+      },
+      {
+        "text": "Use AWS CloudTrail to log Amazon SageMaker API calls to Amazon S3. Set up Amazon SNS to receive a notification when the model is overfitting.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #41": {
+    "question": "A Machine Learning Specialist is building a prediction model for a large number of features using linear models, such as linear regression and logistic regression. During exploratory data analysis, the Specialist observes that many features are highly correlated with each other. This may make the model unstable. What should be done to reduce the impact of having such a large number of features?",
+    "options": [
+      {
+        "text": "Perform one-hot encoding on highly correlated features.",
+        "correct": false
+      },
+      {
+        "text": "Use matrix multiplication on highly correlated features.",
+        "correct": false
+      },
+      {
+        "text": "Create a new feature space using principal component analysis (PCA)",
+        "correct": true
+      },
+      {
+        "text": "Apply the Pearson correlation coefficient.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #42": {
+    "question": "A Machine Learning Specialist is implementing a full Bayesian network on a dataset that describes public transit in New York City. One of the random variables is discrete, and represents the number of minutes New Yorkers wait for a bus given that the buses cycle every 10 minutes, with a mean of 3 minutes. Which prior probability distribution should the ML Specialist use for this variable?",
+    "options": [
+      {
+        "text": "Poisson distribution",
+        "correct": false
+      },
+      {
+        "text": "Uniform distribution",
+        "correct": false
+      },
+      {
+        "text": "Normal distribution",
+        "correct": false
+      },
+      {
+        "text": "Binomial distribution",
+        "correct": true
+      }
+    ]
+  },
+  "Question #43": {
+    "question": "A Data Science team within a large company uses Amazon SageMaker notebooks to access data stored in Amazon S3 buckets. The IT Security team is concerned that internet-enabled notebook instances create a security vulnerability where malicious code running on the instances could compromise data privacy. The company mandates that all instances stay within a secured VPC with no internet access, and data communication traffic must stay within the AWS network. How should the Data Science team configure the notebook instance placement to meet these requirements?",
+    "options": [
+      {
+        "text": "Associate the Amazon SageMaker notebook with a private subnet in a VPC. Place the Amazon SageMaker endpoint and S3 buckets within the same VPC.",
+        "correct": false
+      },
+      {
+        "text": "Associate the Amazon SageMaker notebook with a private subnet in a VPC. Use IAM policies to grant access to Amazon S3 and Amazon SageMaker.",
+        "correct": false
+      },
+      {
+        "text": "Associate the Amazon SageMaker notebook with a private subnet in a VPC. Ensure the VPC has S3 VPC endpoints and Amazon SageMaker VPC endpoints attached to it.",
+        "correct": true
+      },
+      {
+        "text": "Associate the Amazon SageMaker notebook with a private subnet in a VPC. Ensure the VPC has a NAT gateway and an associated security group allowing only outbound connections to Amazon S3 and Amazon SageMaker.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #44": {
+    "question": "A Machine Learning Specialist has created a deep learning neural network model that performs well on the training data but performs poorly on the test data. Which of the following methods should the Specialist consider using to correct this? (Choose three.)",
+    "options": [
+      {
+        "text": "Decrease regularization.",
+        "correct": false
+      },
+      {
+        "text": "Increase regularization.",
+        "correct": true
+      },
+      {
+        "text": "Increase dropout.",
+        "correct": true
+      },
+      {
+        "text": "Decrease dropout.",
+        "correct": false
+      },
+      {
+        "text": "Increase feature combinations.",
+        "correct": false
+      },
+      {
+        "text": "Decrease feature combinations.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #45": {
+    "question": "A Data Scientist needs to create a serverless ingestion and analytics solution for high-velocity, real-time streaming data. The ingestion process must buffer and convert incoming records from JSON to a query-optimized, columnar format without data loss. The output datastore must be highly available, and Analysts must be able to run SQL queries against the data and connect to existing business intelligence dashboards. Which solution should the Data Scientist build to satisfy the requirements?",
+    "options": [
+      {
+        "text": "Create a schema in the AWS Glue Data Catalog of the incoming data format. Use an Amazon Kinesis Data Firehose delivery stream to stream the data and transform the data to Apache Parquet or ORC format using the AWS Glue Data Catalog before delivering to Amazon S3. Have the Analysts query the data directly from Amazon S3 using Amazon Athena, and connect to BI tools using the Athena Java Database Connectivity (JDBC) connector.",
+        "correct": true
+      },
+      {
+        "text": "Write each JSON record to a staging location in Amazon S3. Use the S3 Put event to trigger an AWS Lambda function that transforms the data into Apache Parquet or ORC format and writes the data to a processed data location in Amazon S3. Have the Analysts query the data directly from Amazon S3 using Amazon Athena, and connect to BI tools using the Athena Java Database Connectivity (JDBC) connector.",
+        "correct": false
+      },
+      {
+        "text": "Write each JSON record to a staging location in Amazon S3. Use the S3 Put event to trigger an AWS Lambda function that transforms the data into Apache Parquet or ORC format and inserts it into an Amazon RDS PostgreSQL database. Have the Analysts query and run dashboards from the RDS database.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon Kinesis Data Analytics to ingest the streaming data and perform real-time SQL queries to convert the records to Apache Parquet before delivering to Amazon S3. Have the Analysts query the data directly from Amazon S3 using Amazon Athena and connect to BI tools using the Athena Java Database Connectivity (JDBC) connector.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #46": {
+    "question": "An online reseller has a large, multi-column dataset with one column missing 30% of its data. A Machine Learning Specialist believes that certain columns in the dataset could be used to reconstruct the missing data. Which reconstruction approach should the Specialist use to preserve the integrity of the dataset?",
+    "options": [
+      {
+        "text": "Listwise deletion",
+        "correct": false
+      },
+      {
+        "text": "Last observation carried forward",
+        "correct": false
+      },
+      {
+        "text": "Multiple imputation",
+        "correct": true
+      },
+      {
+        "text": "Mean substitution",
+        "correct": false
+      }
+    ]
+  },
+  "Question #47": {
+    "question": "A company is setting up an Amazon SageMaker environment. The corporate data security policy does not allow communication over the internet. How can the company enable the Amazon SageMaker service without enabling direct internet access to Amazon SageMaker notebook instances?",
+    "options": [
+      {
+        "text": "Create a NAT gateway within the corporate VPC.",
+        "correct": true
+      },
+      {
+        "text": "Route Amazon SageMaker traffic through an on-premises network.",
+        "correct": false
+      },
+      {
+        "text": "Create Amazon SageMaker VPC interface endpoints within the corporate VPC.",
+        "correct": false
+      },
+      {
+        "text": "Create VPC peering with Amazon VPC hosting Amazon SageMaker.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #48": {
+    "question": "A Machine Learning Specialist is training a model to identify the make and model of vehicles in images. The Specialist wants to use transfer learning and an existing model trained on images of general objects. The Specialist collated a large custom dataset of pictures containing different vehicle makes and models. What should the Specialist do to initialize the model to re-train it with the custom data?",
+    "options": [
+      {
+        "text": "Initialize the model with random weights in all layers including the last fully connected layer.",
+        "correct": false
+      },
+      {
+        "text": "Initialize the model with pre-trained weights in all layers and replace the last fully connected layer.",
+        "correct": true
+      },
+      {
+        "text": "Initialize the model with random weights in all layers and replace the last fully connected layer.",
+        "correct": false
+      },
+      {
+        "text": "Initialize the model with pre-trained weights in all layers including the last fully connected layer.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #49": {
+    "question": "An office security agency conducted a successful pilot using 100 cameras installed at key locations within the main office. Images from the cameras were uploaded to Amazon S3 and tagged using Amazon Rekognition, and the results were stored in Amazon ES. The agency is now looking to expand the pilot into a full production system using thousands of video cameras in its office locations globally. The goal is to identify activities performed by non-employees in real time. Which solution should the agency consider?",
+    "options": [
+      {
+        "text": "Use a proxy server at each local office and for each camera, and stream the RTSP feed to a unique Amazon Kinesis Video Streams video stream. On each stream, use Amazon Rekognition Video and create a stream processor to detect faces from a collection of known employees, and alert when non-employees are detected.",
+        "correct": true
+      },
+      {
+        "text": "Use a proxy server at each local office and for each camera, and stream the RTSP feed to a unique Amazon Kinesis Video Streams video stream. On each stream, use Amazon Rekognition Image to detect faces from a collection of known employees and alert when non-employees are detected.",
+        "correct": false
+      },
+      {
+        "text": "Install AWS DeepLens cameras and use the DeepLens_Kinesis_Video module to stream video to Amazon Kinesis Video Streams for each camera. On each stream, use Amazon Rekognition Video and create a stream processor to detect faces from a collection on each stream, and alert when non-employees are detected.",
+        "correct": false
+      },
+      {
+        "text": "Install AWS DeepLens cameras and use the DeepLens_Kinesis_Video module to stream video to Amazon Kinesis Video Streams for each camera. On each stream, run an AWS Lambda function to capture image fragments and then call Amazon Rekognition Image to detect faces from a collection of known employees, and alert when non-employees are detected.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #50": {
+    "question": "A Marketing Manager at a pet insurance company plans to launch a targeted marketing campaign on social media to acquire new customers. Currently, the company has the following data in Amazon Aurora: Profiles for all past and existing customers, Profiles for all past and existing insured pets, Policy-level information, Premiums received, Claims paid. What steps should be taken to implement a machine learning model to identify potential new customers on social media?",
+    "options": [
+      {
+        "text": "Use regression on customer profile data to understand key characteristics of consumer segments. Find similar profiles on social media",
+        "correct": false
+      },
+      {
+        "text": "Use clustering on customer profile data to understand key characteristics of consumer segments. Find similar profiles on social media",
+        "correct": false
+      },
+      {
+        "text": "Use a recommendation engine on customer profile data to understand key characteristics of consumer segments. Find similar profiles on social media.",
+        "correct": true
+      },
+      {
+        "text": "Use a decision tree classifier engine on customer profile data to understand key characteristics of consumer segments. Find similar profiles on social media.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #51": {
+    "question": "A manufacturing company has a large set of labeled historical sales data. The manufacturer would like to predict how many units of a particular part should be produced each quarter. Which machine learning approach should be used to solve this problem?",
+    "options": [
+      {
+        "text": "Logistic regression",
+        "correct": false
+      },
+      {
+        "text": "Random Cut Forest (RCF)",
+        "correct": false
+      },
+      {
+        "text": "Principal component analysis (PCA)",
+        "correct": false
+      },
+      {
+        "text": "Linear regression",
+        "correct": true
+      }
+    ]
+  },
+  "Question #52": {
+    "question": "A financial services company is building a robust serverless data lake on Amazon S3. The data lake should be flexible and meet the following requirements: Support querying old and new data on Amazon S3 through Amazon Athena and Amazon Redshift Spectrum. Support event-driven ETL pipelines. Provide a quick and easy way to understand metadata. Which approach meets these requirements?",
+    "options": [
+      {
+        "text": "Use an AWS Glue crawler to crawl S3 data, an AWS Lambda function to trigger an AWS Glue ETL job, and an AWS Glue Data Catalog to search and discover metadata.",
+        "correct": true
+      },
+      {
+        "text": "Use an AWS Glue crawler to crawl S3 data, an AWS Lambda function to trigger an AWS Batch job, and an external Apache Hive metastore to search and discover metadata.",
+        "correct": false
+      },
+      {
+        "text": "Use an AWS Glue crawler to crawl S3 data, an Amazon CloudWatch alarm to trigger an AWS Batch job, and an AWS Glue Data Catalog to search and discover metadata.",
+        "correct": false
+      },
+      {
+        "text": "Use an AWS Glue crawler to crawl S3 data, an Amazon CloudWatch alarm to trigger an AWS Glue ETL job, and an external Apache Hive metastore to search and discover metadata.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #53": {
+    "question": "A company's Machine Learning Specialist needs to improve the training speed of a time-series forecasting model using TensorFlow. The training is currently implemented on a single-GPU machine and takes approximately 23 hours to complete. The training needs to be run daily. The model accuracy is acceptable, but the company anticipates a continuous increase in the size of the training data and a need to update the model on an hourly, rather than a daily, basis. The company also wants to minimize coding effort and infrastructure changes. What should the Machine Learning Specialist do to the training solution to allow it to scale for future demand?",
+    "options": [
+      {
+        "text": "Do not change the TensorFlow code. Change the machine to one with a more powerful GPU to speed up the training.",
+        "correct": false
+      },
+      {
+        "text": "Change the TensorFlow code to implement a Horovod distributed framework supported by Amazon SageMaker. Parallelize the training to as many machines as needed to achieve the business goals.",
+        "correct": true
+      },
+      {
+        "text": "Switch to using a built-in AWS SageMaker DeepAR model. Parallelize the training to as many machines as needed to achieve the business goals.",
+        "correct": false
+      },
+      {
+        "text": "Move the training to Amazon EMR and distribute the workload to as many machines as needed to achieve the business goals.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #54": {
+    "question": "Which of the following metrics should a Machine Learning Specialist generally use to compare/evaluate machine learning classification models against each other?",
+    "options": [
+      {
+        "text": "Recall",
+        "correct": false
+      },
+      {
+        "text": "Misclassification rate",
+        "correct": false
+      },
+      {
+        "text": "Mean absolute percentage error (MAPE)",
+        "correct": false
+      },
+      {
+        "text": "Area Under the ROC Curve (AUC)",
+        "correct": true
+      }
+    ]
+  },
+  "Question #55": {
+    "question": "A company is running a machine learning prediction service that generates 100 TB of predictions every day. A Machine Learning Specialist must generate a visualization of the daily precision-recall curve from the predictions, and forward a read-only version to the Business team. Which solution requires the LEAST coding effort?",
+    "options": [
+      {
+        "text": "Run a daily Amazon EMR workflow to generate precision-recall data, and save the results in Amazon S3. Give the Business team read-only access to S3.",
+        "correct": false
+      },
+      {
+        "text": "Generate daily precision-recall data in Amazon QuickSight, and publish the results in a dashboard shared with the Business team.",
+        "correct": false
+      },
+      {
+        "text": "Run a daily Amazon EMR workflow to generate precision-recall data, and save the results in Amazon S3. Visualize the arrays in Amazon QuickSight, and publish them in a dashboard shared with the Business team.",
+        "correct": true
+      },
+      {
+        "text": "Generate daily precision-recall data in Amazon ES, and publish the results in a dashboard shared with the Business team.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #56": {
+    "question": "A Machine Learning Specialist is preparing data for training on Amazon SageMaker. The Specialist is using one of the SageMaker built-in algorithms for the training. The dataset is stored in .CSV format and is transformed into a numpy.array, which appears to be negatively affecting the speed of the training. What should the Specialist do to optimize the data for training on SageMaker?",
+    "options": [
+      {
+        "text": "Use the SageMaker batch transform feature to transform the training data into a DataFrame.",
+        "correct": false
+      },
+      {
+        "text": "Use AWS Glue to compress the data into the Apache Parquet format.",
+        "correct": false
+      },
+      {
+        "text": "Transform the dataset into the RecordIO protobuf format.",
+        "correct": true
+      },
+      {
+        "text": "Use the SageMaker hyperparameter optimization feature to automatically optimize the data.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #57": {
+    "question": "A Machine Learning Specialist is required to build a supervised image-recognition model to identify a cat. The ML Specialist performs some tests and records the following results for a neural network-based image classifier: Total number of images available = 1,000, Test set images = 100 (constant test set). The ML Specialist notices that, in over 75% of the misclassified images, the cats were held upside down by their owners. Which techniques can be used by the ML Specialist to improve this specific test error?",
+    "options": [
+      {
+        "text": "Increase the training data by adding variation in rotation for training images.",
+        "correct": true
+      },
+      {
+        "text": "Increase the number of epochs for model training.",
+        "correct": false
+      },
+      {
+        "text": "Increase the number of layers for the neural network.",
+        "correct": false
+      },
+      {
+        "text": "Increase the dropout rate for the second-to-last layer.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #58": {
+    "question": "A Machine Learning Specialist needs to be able to ingest streaming data and store it in Apache Parquet files for exploration and analysis. Which of the following services would both ingest and store this data in the correct format?",
+    "options": [
+      {
+        "text": "AWS DMS",
+        "correct": false
+      },
+      {
+        "text": "Amazon Kinesis Data Streams",
+        "correct": false
+      },
+      {
+        "text": "Amazon Kinesis Data Firehose",
+        "correct": true
+      },
+      {
+        "text": "Amazon Kinesis Data Analytics",
+        "correct": false
+      }
+    ]
+  },
+  "Question #59": {
+    "question": "A data scientist has explored and sanitized a dataset in preparation for the modeling phase of a supervised learning task. The statistical dispersion can vary widely between features, sometimes by several orders of magnitude. Before moving on to the modeling phase, the data scientist wants to ensure that the prediction performance on the production data is as accurate as possible. Which sequence of steps should the data scientist take to meet these requirements?",
+    "options": [
+      {
+        "text": "Apply random sampling to the dataset. Then split the dataset into training, validation, and test sets.",
+        "correct": false
+      },
+      {
+        "text": "Split the dataset into training, validation, and test sets. Then rescale the training set and apply the same scaling to the validation and test sets.",
+        "correct": true
+      },
+      {
+        "text": "Rescale the dataset. Then split the dataset into training, validation, and test sets.",
+        "correct": false
+      },
+      {
+        "text": "Split the dataset into training, validation, and test sets. Then rescale the training set, the validation set, and the test set independently.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #60": {
+    "question": "A Machine Learning Specialist is assigned a TensorFlow project using Amazon SageMaker for training, and needs to continue working for an extended period with no Wi-Fi access. Which approach should the Specialist use to continue working?",
+    "options": [
+      {
+        "text": "Install Python 3 and boto3 on their laptop and continue the code development using that environment.",
+        "correct": false
+      },
+      {
+        "text": "Download the TensorFlow Docker container used in Amazon SageMaker from GitHub to their local environment, and use the Amazon SageMaker Python SDK to test the code.",
+        "correct": true
+      },
+      {
+        "text": "Download TensorFlow from tensorflow.org to emulate the TensorFlow kernel in the SageMaker environment.",
+        "correct": false
+      },
+      {
+        "text": "Download the SageMaker notebook to their local environment, then install Jupyter Notebooks on their laptop and continue the development in a local notebook.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #61": {
+    "question": "A Machine Learning Specialist is working with a large cybersecurity company that manages security events in real time for companies around the world. The cybersecurity company wants to design a solution that will allow it to use machine learning to score malicious events as anomalies on the data as it is being ingested. The company also wants to be able to save the results in its data lake for later processing and analysis. What is the MOST efficient way to accomplish these tasks?",
+    "options": [
+      {
+        "text": "Ingest the data using Amazon Kinesis Data Firehose, and use Amazon Kinesis Data Analytics Random Cut Forest (RCF) for anomaly detection. Then use Kinesis Data Firehose to stream the results to Amazon S3.",
+        "correct": true
+      },
+      {
+        "text": "Ingest the data into Apache Spark Streaming using Amazon EMR, and use Spark MLlib with k-means to perform anomaly detection. Then store the results in an Apache Hadoop Distributed File System (HDFS) using Amazon EMR with a replication factor of three as the data lake.",
+        "correct": false
+      },
+      {
+        "text": "Ingest the data and store it in Amazon S3. Use AWS Batch along with the AWS Deep Learning AMIs to train a k-means model using TensorFlow on the data in Amazon S3.",
+        "correct": false
+      },
+      {
+        "text": "Ingest the data and store it in Amazon S3. Have an AWS Glue job that is triggered on demand transform the new data. Then use the built-in Random Cut Forest (RCF) model within Amazon SageMaker to detect anomalies in the data.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #62": {
+    "question": "A Data Scientist wants to gain real-time insights into a data stream of GZIP files. Which solution would allow the use of SQL to query the stream with the LEAST latency?",
+    "options": [
+      {
+        "text": "Amazon Kinesis Data Analytics with an AWS Lambda function to transform the data.",
+        "correct": true
+      },
+      {
+        "text": "AWS Glue with a custom ETL script to transform the data.",
+        "correct": false
+      },
+      {
+        "text": "An Amazon Kinesis Client Library to transform the data and save it to an Amazon ES cluster.",
+        "correct": false
+      },
+      {
+        "text": "Amazon Kinesis Data Firehose to transform the data and put it into an Amazon S3 bucket.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #63": {
+    "question": "A retail company intends to use machine learning to categorize new products. A labeled dataset of current products was provided to the Data Science team. The dataset includes 1,200 products. The labeled dataset has 15 features for each product such as title dimensions, weight, and price. Each product is labeled as belonging to one of six categories such as books, games, electronics, and movies. Which model should be used for categorizing new products using the provided dataset for training?",
+    "options": [
+      {
+        "text": "An XGBoost model where the objective parameter is set to multi:softmax",
+        "correct": false
+      },
+      {
+        "text": "A deep convolutional neural network (CNN) with a softmax activation function for the last layer",
+        "correct": true
+      },
+      {
+        "text": "A regression forest where the number of trees is set equal to the number of product categories",
+        "correct": false
+      },
+      {
+        "text": "A DeepAR forecasting model based on a recurrent neural network (RNN)",
+        "correct": false
+      }
+    ]
+  },
+  "Question #64": {
+    "question": "A Data Scientist is working on an application that performs sentiment analysis. The validation accuracy is poor, and the Data Scientist thinks that the cause may be a rich vocabulary and a low average frequency of words in the dataset. Which tool should be used to improve the validation accuracy?",
+    "options": [
+      {
+        "text": "Amazon Comprehend syntax analysis and entity detection",
+        "correct": false
+      },
+      {
+        "text": "Amazon SageMaker BlazingText cbow mode",
+        "correct": false
+      },
+      {
+        "text": "Natural Language Toolkit (NLTK) stemming and stop word removal",
+        "correct": false
+      },
+      {
+        "text": "Scikit-learn term frequency-inverse document frequency (TF-IDF) vectorizer",
+        "correct": true
+      }
+    ]
+  },
+  "Question #65": {
+    "question": "A Machine Learning Specialist is building a model to predict future employment rates based on a wide range of economic factors. While exploring the data, the Specialist notices that the magnitude of the input features vary greatly. The Specialist does not want variables with a larger magnitude to dominate the model. What should the Specialist do to prepare the data for model training?",
+    "options": [
+      {
+        "text": "Apply quantile binning to group the data into categorical bins to keep any relationships in the data by replacing the magnitude with distribution.",
+        "correct": false
+      },
+      {
+        "text": "Apply the Cartesian product transformation to create new combinations of fields that are independent of the magnitude.",
+        "correct": false
+      },
+      {
+        "text": "Apply normalization to ensure each field will have a mean of 0 and a variance of 1 to remove any significant magnitude.",
+        "correct": true
+      },
+      {
+        "text": "Apply the orthogonal sparse bigram (OSB) transformation to apply a fixed-size sliding window to generate new features of a similar magnitude.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #66": {
+    "question": "A Machine Learning Specialist must build out a process to query a dataset on Amazon S3 using Amazon Athena. The dataset contains more than 800,000 records stored as plaintext CSV files. Each record contains 200 columns and is approximately 1.5 MB in size. Most queries will span 5 to 10 columns only. How should the Machine Learning Specialist transform the dataset to minimize query runtime?",
+    "options": [
+      {
+        "text": "Convert the records to Apache Parquet format.",
+        "correct": true
+      },
+      {
+        "text": "Convert the records to JSON format.",
+        "correct": false
+      },
+      {
+        "text": "Convert the records to GZIP CSV format.",
+        "correct": false
+      },
+      {
+        "text": "Convert the records to XML format.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #67": {
+    "question": "A Machine Learning Specialist is developing a daily ETL workflow containing multiple ETL jobs. The workflow consists of the following processes: Start the workflow as soon as data is uploaded to Amazon S3. When all the datasets are available in Amazon S3, start an ETL job to join the uploaded datasets with multiple terabyte-sized datasets already stored in Amazon S3. Store the results of joining datasets in Amazon S3. If one of the jobs fails, send a notification to the Administrator. Which configuration will meet these requirements?",
+    "options": [
+      {
+        "text": "Use AWS Lambda to trigger an AWS Step Functions workflow to wait for dataset uploads to complete in Amazon S3. Use AWS Glue to join the datasets. Use an Amazon CloudWatch alarm to send an SNS notification to the Administrator in the case of a failure.",
+        "correct": true
+      },
+      {
+        "text": "Develop the ETL workflow using AWS Lambda to start an Amazon SageMaker notebook instance. Use a lifecycle configuration script to join the datasets and persist the results in Amazon S3. Use an Amazon CloudWatch alarm to send an SNS notification to the Administrator in the case of a failure.",
+        "correct": false
+      },
+      {
+        "text": "Develop the ETL workflow using AWS Batch to trigger the start of ETL jobs when data is uploaded to Amazon S3. Use AWS Glue to join the datasets in Amazon S3. Use an Amazon CloudWatch alarm to send an SNS notification to the Administrator in the case of a failure.",
+        "correct": false
+      },
+      {
+        "text": "Use AWS Lambda to chain other Lambda functions to read and join the datasets in Amazon S3 as soon as the data is uploaded to Amazon S3. Use an Amazon CloudWatch alarm to send an SNS notification to the Administrator in the case of a failure.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #68": {
+    "question": "An agency collects census information within a country to determine healthcare and social program needs by province and city. The census form collects responses for approximately 500 questions from each citizen. Which combination of algorithms would provide the appropriate insights? (Choose two.)",
+    "options": [
+      {
+        "text": "The factorization machines (FM) algorithm",
+        "correct": false
+      },
+      {
+        "text": "The Latent Dirichlet Allocation (LDA) algorithm",
+        "correct": false
+      },
+      {
+        "text": "The principal component analysis (PCA) algorithm",
+        "correct": true
+      },
+      {
+        "text": "The k-means algorithm",
+        "correct": true
+      },
+      {
+        "text": "The Random Cut Forest (RCF) algorithm",
+        "correct": false
+      }
+    ]
+  },
+  "Question #69": {
+    "question": "A large consumer goods manufacturer has the following products on sale: 34 different toothpaste variants, 48 different toothbrush variants, 43 different mouthwash variants. The entire sales history of all these products is available in Amazon S3. Currently, the company is using custom-built autoregressive integrated moving average (ARIMA) models to forecast demand for these products. The company wants to predict the demand for a new product that will soon be launched. Which solution should a Machine Learning Specialist apply?",
+    "options": [
+      {
+        "text": "Train a custom ARIMA model to forecast demand for the new product.",
+        "correct": false
+      },
+      {
+        "text": "Train an Amazon SageMaker DeepAR algorithm to forecast demand for the new product.",
+        "correct": true
+      },
+      {
+        "text": "Train an Amazon SageMaker k-means clustering algorithm to forecast demand for the new product.",
+        "correct": false
+      },
+      {
+        "text": "Train a custom XGBoost model to forecast demand for the new product.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #70": {
+    "question": "A Machine Learning Specialist uploads a dataset to an Amazon S3 bucket protected with server-side encryption using AWS KMS. How should the ML Specialist define the Amazon SageMaker notebook instance so it can read the same dataset from Amazon S3?",
+    "options": [
+      {
+        "text": "Define security group(s) to allow all HTTP inbound/outbound traffic and assign those security group(s) to the Amazon SageMaker notebook instance.",
+        "correct": false
+      },
+      {
+        "text": "Configure the Amazon SageMaker notebook instance to have access to the VPC. Grant permission in the KMS key policy to the notebook's KMS role.",
+        "correct": false
+      },
+      {
+        "text": "Assign an IAM role to the Amazon SageMaker notebook with S3 read access to the dataset. Grant permission in the KMS key policy to that role.",
+        "correct": true
+      },
+      {
+        "text": "Assign the same KMS key used to encrypt data in Amazon S3 to the Amazon SageMaker notebook instance.",
+        "correct": false
+      }
+    ]
   }
 }

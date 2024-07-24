@@ -2,6 +2,7 @@ import json
 import random
 import os
 import webbrowser
+from colorama import Fore, Style
 
 def load_tally(filename='tally.json'):
     if not os.path.exists(filename):
@@ -70,13 +71,13 @@ def main():
         
         user_choices = get_user_choices(len(shuffled_options))
         if check_answers(shuffled_options, user_choices):
-            print("Correct!")
+            print(Fore.GREEN + "Correct!" + Style.RESET_ALL)
             tally[title]['correct'] += 1
         else:
-            print("Incorrect. Better luck next time!")
+            print(Fore.RED + "Incorrect. Better luck next time!" + Style.RESET_ALL)
             for option in q_data['options']:
                 if option['correct']:
-                    print("The correct answer was: ", option['text'])
+                    print(Fore.RED + "The correct answer was: ", option['text'] + Style.RESET_ALL)
             write_failed_question_to_file(title, q_data['question'])
             tally[title]['incorrect'] += 1
             if tally[title]['incorrect'] > 1:
