@@ -58,3 +58,14 @@ A Machine Learning Specialist is preparing data for training on Amazon SageMaker
 Question #74
 A Machine Learning team runs its own training algorithm on Amazon SageMaker. The training algorithm requires external assets. The team needs to submit both its own algorithm code and algorithm-specific parameters to Amazon SageMaker. What combination of services should the team use to build a custom algorithm in Amazon SageMaker? (Choose two.)
 
+Question #73
+An aircraft engine manufacturing company is measuring 200 performance metrics in a time-series. Engineers want to detect critical manufacturing defects in near-real time during testing. All of the data needs to be stored for offline analysis. What approach would be the MOST effective to perform near-real time defect detection?
+
+Question #58
+A Machine Learning Specialist needs to be able to ingest streaming data and store it in Apache Parquet files for exploration and analysis. Which of the following services would both ingest and store this data in the correct format?
+
+Question #13
+The displayed graph is from a forecasting model for testing a time series.
+
+Considering the graph only, which conclusion should a Machine Learning Specialist make about the behavior of the model?
+
