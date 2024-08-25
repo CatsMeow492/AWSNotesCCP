@@ -1517,5 +1517,228 @@
         "correct": false
       }
     ]
+  },
+
+  "Question #71": {
+    "question": "A Data Scientist needs to migrate an existing on-premises ETL process to the cloud. The current process runs at regular time intervals and uses PySpark to combine and format multiple large data sources into a single consolidated output for downstream processing. The Data Scientist has been given the following requirements for the cloud solution: Combine multiple data sources. Reuse existing PySpark logic. Run the solution on the existing schedule. Minimize the number of servers that will need to be managed. Which architecture should the Data Scientist use to build this solution?",
+    "options": [
+      {
+        "text": "Write the raw data to Amazon S3. Schedule an AWS Lambda function to submit a Spark step to a persistent Amazon EMR cluster based on the existing schedule. Use the existing PySpark logic to run the ETL job on the EMR cluster. Output the results to a 'processed' location in Amazon S3 that is accessible for downstream use.",
+        "correct": false
+      },
+      {
+        "text": "Write the raw data to Amazon S3. Create an AWS Glue ETL job to perform the ETL processing against the input data. Write the ETL job in PySpark to leverage the existing logic. Create a new AWS Glue trigger to trigger the ETL job based on the existing schedule. Configure the output target of the ETL job to write to a 'processed' location in Amazon S3 that is accessible for downstream use.",
+        "correct": true
+      },
+      {
+        "text": "Write the raw data to Amazon S3. Schedule an AWS Lambda function to run on the existing schedule and process the input data from Amazon S3. Write the Lambda logic in Python and implement the existing PySpark logic to perform the ETL process. Have the Lambda function output the results to a 'processed' location in Amazon S3 that is accessible for downstream use.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon Kinesis Data Analytics to stream the input data and perform real-time SQL queries against the stream to carry out the required transformations within the stream. Deliver the output results to a 'processed' location in Amazon S3 that is accessible for downstream use.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #72": {
+    "question": "A Data Scientist is building a model to predict customer churn using a dataset of 100 continuous numerical features. The Marketing team has not provided any insight about which features are relevant for churn prediction. The Marketing team wants to interpret the model and see the direct impact of relevant features on the model outcome. While training a logistic regression model, the Data Scientist observes that there is a wide gap between the training and validation set accuracy. Which methods can the Data Scientist use to improve the model performance and satisfy the Marketing team's needs? (Choose two.)",
+    "options": [
+      {
+        "text": "Add L1 regularization to the classifier",
+        "correct": true
+      },
+      {
+        "text": "Add features to the dataset",
+        "correct": false
+      },
+      {
+        "text": "Perform recursive feature elimination",
+        "correct": true
+      },
+      {
+        "text": "Perform t-distributed stochastic neighbor embedding (t-SNE)",
+        "correct": false
+      },
+      {
+        "text": "Perform linear discriminant analysis",
+        "correct": false
+      }
+    ]
+  },
+  "Question #73": {
+    "question": "An aircraft engine manufacturing company is measuring 200 performance metrics in a time-series. Engineers want to detect critical manufacturing defects in near-real time during testing. All of the data needs to be stored for offline analysis. What approach would be the MOST effective to perform near-real time defect detection?",
+    "options": [
+      {
+        "text": "Use AWS IoT Analytics for ingestion, storage, and further analysis. Use Jupyter notebooks from within AWS IoT Analytics to carry out analysis for anomalies.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon S3 for ingestion, storage, and further analysis. Use an Amazon EMR cluster to carry out Apache Spark ML k-means clustering to determine anomalies.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon S3 for ingestion, storage, and further analysis. Use the Amazon SageMaker Random Cut Forest (RCF) algorithm to determine anomalies.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon Kinesis Data Firehose for ingestion and Amazon Kinesis Data Analytics Random Cut Forest (RCF) to perform anomaly detection. Use Kinesis Data Firehose to store data in Amazon S3 for further analysis.",
+        "correct": true
+      }
+    ]
+  },
+  "Question #74": {
+    "question": "A Machine Learning team runs its own training algorithm on Amazon SageMaker. The training algorithm requires external assets. The team needs to submit both its own algorithm code and algorithm-specific parameters to Amazon SageMaker. What combination of services should the team use to build a custom algorithm in Amazon SageMaker? (Choose two.)",
+    "options": [
+      {
+        "text": "AWS Secrets Manager",
+        "correct": false
+      },
+      {
+        "text": "AWS CodeStar",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR",
+        "correct": true
+      },
+      {
+        "text": "Amazon ECS",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3",
+        "correct": true
+      }
+    ]
+  },
+  "Question #75": {
+    "question": "A Machine Learning Specialist wants to determine the appropriate SageMakerVariantInvocationsPerInstance setting for an endpoint automatic scaling configuration. The Specialist has performed a load test on a single instance and determined that peak requests per second (RPS) without service degradation is about 20 RPS. As this is the first deployment, the Specialist intends to set the invocation safety factor to 0.5. Based on the stated parameters and given that the invocations per instance setting is measured on a per-minute basis, what should the Specialist set as the SageMakerVariantInvocationsPerInstance setting?",
+    "options": [
+      {
+        "text": "10",
+        "correct": false
+      },
+      {
+        "text": "30",
+        "correct": false
+      },
+      {
+        "text": "600",
+        "correct": true
+      },
+      {
+        "text": "2,400",
+        "correct": false
+      }
+    ]
+  },
+  "Question #76": {
+    "question": "A company uses a long short-term memory (LSTM) model to evaluate the risk factors of a particular energy sector. The model reviews multi-page text documents to analyze each sentence of the text and categorize it as either a potential risk or no risk. The model is not performing well, even though the Data Scientist has experimented with many different network structures and tuned the corresponding hyperparameters. Which approach will provide the MAXIMUM performance boost?",
+    "options": [
+      {
+        "text": "Initialize the words by term frequency-inverse document frequency (TF-IDF) vectors pretrained on a large collection of news articles related to the energy sector.",
+        "correct": false
+      },
+      {
+        "text": "Use gated recurrent units (GRUs) instead of LSTM and run the training process until the validation loss stops decreasing.",
+        "correct": false
+      },
+      {
+        "text": "Reduce the learning rate and run the training process until the training loss stops decreasing.",
+        "correct": true
+      },
+      {
+        "text": "Initialize the words by word2vec embeddings pretrained on a large collection of news articles related to the energy sector.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #77": {
+    "question": "A Machine Learning Specialist needs to move and transform data in preparation for training. Some of the data needs to be processed in near-real time, and other data can be moved hourly. There are existing Amazon EMR MapReduce jobs to clean and perform feature engineering on the data. Which of the following services can feed data to the MapReduce jobs? (Choose two.)",
+    "options": [
+      {
+        "text": "AWS DMS",
+        "correct": false
+      },
+      {
+        "text": "Amazon Kinesis",
+        "correct": true
+      },
+      {
+        "text": "AWS Data Pipeline",
+        "correct": true
+      },
+      {
+        "text": "Amazon Athena",
+        "correct": false
+      },
+      {
+        "text": "Amazon ES",
+        "correct": false
+      }
+    ]
+  },
+  "Question #78": {
+    "question": "A Machine Learning Specialist previously trained a logistic regression model using scikit-learn on a local machine, and the Specialist now wants to deploy it to production for inference only. What steps should be taken to ensure Amazon SageMaker can host a model that was trained locally?",
+    "options": [
+      {
+        "text": "Build the Docker image with the inference code. Tag the Docker image with the registry hostname and upload it to Amazon ECR.",
+        "correct": true
+      },
+      {
+        "text": "Serialize the trained model so the format is compressed for deployment. Tag the Docker image with the registry hostname and upload it to Amazon S3.",
+        "correct": false
+      },
+      {
+        "text": "Serialize the trained model so the format is compressed for deployment. Build the image and upload it to Docker Hub.",
+        "correct": false
+      },
+      {
+        "text": "Build the Docker image with the inference code. Configure Docker Hub and upload the image to Amazon ECR.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #79": {
+    "question": "A trucking company is collecting live image data from its fleet of trucks across the globe. The data is growing rapidly and approximately 100 GB of new data is generated every day. The company wants to explore machine learning use cases while ensuring the data is only accessible to specific IAM users. Which storage option provides the most processing flexibility and will allow access control with IAM?",
+    "options": [
+      {
+        "text": "Use a database, such as Amazon DynamoDB, to store the images, and set the IAM policies to restrict access to only the desired IAM users.",
+        "correct": false
+      },
+      {
+        "text": "Use an Amazon S3-backed data lake to store the raw images, and set up the permissions using bucket policies.",
+        "correct": true
+      },
+      {
+        "text": "Set up Amazon EMR with Hadoop Distributed File System (HDFS) to store the files, and restrict access to the EMR instances using IAM policies.",
+        "correct": false
+      },
+      {
+        "text": "Configure Amazon EFS with IAM policies to make the data available to Amazon EC2 instances owned by the IAM users.",
+        "correct": false
+      }
+    ]
+  },
+  "Question #80": {
+    "question": "A credit card company wants to build a credit scoring model to help predict whether a new credit card applicant will default on a credit card payment. The company has collected data from a large number of sources with thousands of raw attributes. Early experiments to train a classification model revealed that many attributes are highly correlated, the large number of features slows down the training speed significantly, and that there are some overfitting issues. The Data Scientist on this project would like to speed up the model training time without losing a lot of information from the original dataset. Which feature engineering technique should the Data Scientist use to meet the objectives?",
+    "options": [
+      {
+        "text": "Run self-correlation on all features and remove highly correlated features.",
+        "correct": false
+      },
+      {
+        "text": "Normalize all numerical values to be between 0 and 1.",
+        "correct": false
+      },
+      {
+        "text": "Use an autoencoder or principal component analysis (PCA) to replace original features with new features.",
+        "correct": true
+      },
+      {
+        "text": "Cluster raw data using k-means and use sample data from each cluster to build a new dataset.",
+        "correct": false
+      }
+    ]
   }
 }
