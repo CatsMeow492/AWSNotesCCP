@@ -1740,5 +1740,27 @@
         "correct": false
       }
     ]
+  },
+    "Question #81": {
+    "question": "A Machine Learning Specialist is building a model to predict the price of a house based on various features such as location, size, number of bedrooms, and so on. The Specialist has a training dataset containing 100,000 records and 10 features. The Specialist decides to use Amazon SageMaker to build the model. Which of the following is the MOST efficient approach to train the model?",
+    "options": [
+      {
+        "text": "Use the built-in LinearLearner algorithm with default hyperparameters.",
+        "correct": false
+      },
+      {
+        "text": "Use the built-in XGBoost algorithm with default hyperparameters.",
+        "correct": true
+      },
+      {
+        "text": "Implement a custom neural network using TensorFlow and deploy it on SageMaker.",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon SageMaker Autopilot to automatically train and tune the best model.",
+        "correct": false
+      }
+    ]
   }
 }
+

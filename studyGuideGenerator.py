@@ -26,9 +26,9 @@ def generate_study_guide():
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4-0125-preview",
+            model="chatgpt-4o-latest",
             messages=[
-                {"role": "system", "content": "You are an expert teach of AWS."},
+                {"role": "system", "content": "You are an expert teach of AWS Machine Learning."},
                 {"role": "user", "content": prompt}
             ]
         )

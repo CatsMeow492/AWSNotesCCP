@@ -5,16 +5,19 @@ import webbrowser
 from colorama import Fore, Style
 
 def load_tally(filename='tally.json'):
+    print("Loading tally...")  # Debug print
     if not os.path.exists(filename):
         return {}
     with open(filename, 'r') as file:
         return json.load(file)
 
 def save_tally(tally, filename='tally.json'):
+    print("Saving tally...")  # Debug print
     with open(filename, 'w') as file:
         json.dump(tally, file)
 
 def load_questions(filename='questions.json'):
+    print("Loading questions...")  # Debug print
     with open(filename, 'r') as file:
         return json.load(file)
 
@@ -51,9 +54,13 @@ def write_failed_question_to_file(failed_question, q_data, filename='failed_ques
         file.write(failed_question + '\n' + q_data + '\n\n')
 
 def main():
+    print("Starting main function...")  # Debug print
+    print("Loading questions...")  # Debug print
     questions = load_questions()
+    print("Questions loaded.")  # Debug print
     asked_questions = set()
     tally = load_tally()
+    print("Tally loaded.")  # Debug print
 
     while True:
         if len(asked_questions) == len(questions) or len(asked_questions) == 5:
@@ -63,12 +70,12 @@ def main():
         title, q_data = random.choice([item for item in questions.items() if item[0] not in asked_questions])
         asked_questions.add(title)
         shuffled_options = shuffle_answers(q_data['options'])
-        
+
         if title not in tally:
             tally[title] = {'correct': 0, 'incorrect': 0}
         print('\n')
         display_question_and_options(q_data['question'], shuffled_options, q_data.get('image_url'))
-        
+
         user_choices = get_user_choices(len(shuffled_options))
         if check_answers(shuffled_options, user_choices):
             print(Fore.GREEN + "Correct!" + Style.RESET_ALL)
@@ -85,6 +92,12 @@ def main():
                 print('Number of times failed:', tally[title]['incorrect'])
             continue
         save_tally(tally)
-    
+
+        # Ask the user if they want to continue
+        answer = input("Would you like to continue with another set of questions? (Y/N): ").strip().lower()
+        if answer != 'y':
+            print("Exiting the quiz. Goodbye!")
+            break
+
 if __name__ == "__main__":
     main()
